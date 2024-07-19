@@ -1,4 +1,5 @@
 import HeaderNavBarBrand from "./HeaderNavBarBrand/HeaderNavBarBrand";
+import HeaderNavSearchBar from "./HeaderNavSearchBar/HeaderNavSearchBar";
 
 
 export default function HeaderNavBar() {
@@ -6,19 +7,7 @@ export default function HeaderNavBar() {
         <nav className="navbar" role="navigation" aria-label="main navigation">
 
                 <HeaderNavBarBrand />
-
-                <div className="field has-addons search-bar">
-                <form action="#" className="search-pokemon_form search-form" slot="search-form">
-                    <div className="control">
-                    <input className="input" name="term" type="text" placeholder="Find a pokemon" slot="search-input" />
-                    </div>
-                    <div className="control">
-                    <button className="button is-success">
-                        Search
-                    </button>
-                    </div>
-                </form>
-                </div>
+                <HeaderNavSearchBar />
 
                 <div className="navbar-menu">
                 <div className="navbar-end">
