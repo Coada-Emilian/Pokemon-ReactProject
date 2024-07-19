@@ -19,7 +19,8 @@ export default function TeamArticle() {
                                 src=""
                                 alt="" 
                                 slot="trainer_image"
-                                className="trainer-image"/>
+                                className="trainer-image"
+                                />
                             </figure>
                         </div>
                     </div>
