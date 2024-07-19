@@ -1,0 +1,38 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+#navbar {
+    width:100%;
+}
+
+#navbar-brand {
+    width:100%;
+    margin-bottom: 0.5rem;
+}
+
+
+#navbar-pokedex {
+    width:50%;
+}
+#pokedex-icon {
+    @include m.pokedex_icon
+}
+#icon-title {
+    font-size: 1.2rem;
+}
+#hamburger-element {
+    width:50%;
+}
+.hamburger-span{
+    font-size: 50rem;
+}
+
+#search-form {
+    width:80%;
+    display: flex;
+    margin:0 auto;
+    padding-bottom: 0.5rem;
+    height: fit-content;
+}
+
+

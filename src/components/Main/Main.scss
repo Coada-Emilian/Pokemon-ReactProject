@@ -1,0 +1,64 @@
+@use '../../styles/mixins' as m;
+@use '../../styles/variables' as v;
+
+main {
+    padding:0 1rem;
+}
+
+.main-container {
+    @include m.flexColumn;
+    justify-content: space-between;
+}
+
+.types-container {
+    @include m.flexRow; 
+    gap:0.2rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.type-article {
+    width:10%;
+    font-size: 0.4rem;
+    text-align: center;
+    margin: 0 auto;
+}
+.pokemon-container {
+    @include m.flexRow;
+    flex-wrap: wrap;
+    gap:0.5rem;
+}
+.pokemon-article {
+    width:75%;
+    margin: 0 auto;
+    background-color: v.$main-background;
+}
+.pokemon-card{
+    background-color: v.$main-background;
+    border:1px solid v.$title-font;
+    border-radius: 0.7rem;
+}
+.pokemonArticle-figure {
+    margin: 0 auto;
+    padding:0.2rem
+}
+.card_title{
+    color: v.$title-font;
+    text-align: center;
+}
+.card-footer{
+    width:100%;
+    
+}
+.add-button, .remove-button{
+    width:50%;
+    height: 1.5rem;
+    font-size: 0.5rem;
+    @include m.bold;
+}
+.add-button{
+    border-bottom-left-radius: 0.7rem;
+}
+.remove-button{
+    border-bottom-right-radius: 0.7rem;
+}

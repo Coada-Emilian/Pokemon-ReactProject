@@ -1,0 +1,26 @@
+@use "sass:color";
+
+@use "./variables" as v;
+
+/* Typography */
+@mixin bold {
+    font-weight: 700;
+}
+
+
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@mixin flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+//pokedex logo
+@mixin pokedex_icon{
+    width:20%;
+}
+

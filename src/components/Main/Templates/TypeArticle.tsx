@@ -12,7 +12,7 @@ export default function TypeArticle({type} : TypesProps) {
     
     return(
 
-        <article className="type_article">
+        <article className="type-article">
 
             <a href="#" className="type-button" slot="type_icon">
                 <img 

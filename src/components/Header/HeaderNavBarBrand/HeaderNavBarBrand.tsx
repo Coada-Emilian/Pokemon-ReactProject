@@ -4,7 +4,7 @@ import HeaderNavBarBrandIcon from "./HeaderNavBarBrandIcon";
 export default function HeaderNavBar() {
     return(
 
-        <div className="navbar-brand">
+        <div className="navbar-brand" id="navbar-brand">
 
             <HeaderNavBarBrandIcon />
             <HeaderNavBarBrandHamburger />

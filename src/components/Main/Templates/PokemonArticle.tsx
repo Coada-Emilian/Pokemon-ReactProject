@@ -36,8 +36,8 @@ export default function PokemonArticle({pokemon} : PokemonProps) {
                     </div>
 
                     <footer className="card-footer">
-                        <button className="add_button button is-light " slot="pokemonArticle_addButton">Ajouter à l'équipe</button>
-                        <button className="remove_button button is-dark" slot="pokemonArticle_removeButton">Retirer de l'équipe</button>
+                        <button className="add-button button is-light " slot="pokemonArticle_addButton">Ajouter à l'équipe</button>
+                        <button className="remove-button button is-dark" slot="pokemonArticle_removeButton">Retirer de l'équipe</button>
                     </footer>
 
                 </div>

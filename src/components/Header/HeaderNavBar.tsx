@@ -6,7 +6,7 @@ import HeaderNavSearchBar from "./HeaderNavSearchBar/HeaderNavSearchBar";
 export default function HeaderNavBar() {
     return(
 
-        <nav className="navbar" role="navigation" aria-label="main navigation">
+        <nav className="navbar" id="navbar" role="navigation" aria-label="main navigation">
 
                 <HeaderNavBarBrand />
                 <HeaderNavSearchBar />

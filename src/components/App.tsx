@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import './App.scss';
 
 import getAllPokemon from './Api/getAllPokemon';
 
