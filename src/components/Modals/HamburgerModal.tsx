@@ -10,7 +10,7 @@ export default function HamburgerModal() {
 
             <div className="modal-background"></div>
 
-            <div className="modal-content" id="hamburger-modal_content">
+            <div className="modal-content" id="hamburger_modal_content">
                 <div className="buttons">
 
                     <CreateTeamButton />
@@ -20,7 +20,7 @@ export default function HamburgerModal() {
 
                 </div>
             </div>
-            <button className="modal-close is-large" slot="modal-close_btn" aria-label="close"></button>
+            <button className="modal-close is-large" slot="modal_close_button" aria-label="close"></button>
         </div>
 
     )

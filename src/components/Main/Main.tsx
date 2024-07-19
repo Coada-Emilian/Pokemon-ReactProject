@@ -1,3 +1,4 @@
+import CreateTeamModal from "../Modals/CreateTeamModal";
 import HamburgerModal from "../Modals/HamburgerModal";
 
 export default function Main() {
@@ -6,6 +7,7 @@ export default function Main() {
         <main className="pokemon_container">
 
             <HamburgerModal />
+            <CreateTeamModal />
             
         </main>
 
