@@ -1,24 +1,20 @@
-import CreateTeamModal from "./Modals/CreateTeamModal";
-import EditTeamNameModal from "./Modals/EditTeamNameModal";
-import HamburgerModal from "./Modals/HamburgerModal";
-import PokemonModal from "./Modals/PokemonModal/PokemonModal";
-import TeamModal from "./Modals/TeamModal/TeamModal";
-import PokemonArticle from "./Templates/PokemonArticle";
-import TypeArticle from "./Templates/TypeArticle";
+import { IPokemon } from "../../@types/types"
 
-export default function Main() {
+interface MainProps {
+    pokemons: IPokemon[]
+}
+
+export default function Main({pokemons}:MainProps) {
+    const pokemonsJSX = pokemons.map((pokemon) => {
+        return(
+            <h2 key={pokemon.id}>{pokemon.name}</h2>
+        ) 
+    })
     return(
 
         <main className="pokemon-container">
-
-            <HamburgerModal />
-            <CreateTeamModal />
-            <EditTeamNameModal />
-            <PokemonModal />
-            <TeamModal />
-            <PokemonArticle />
-            <TypeArticle />
-            
+            <h1>Pokemon</h1>
+            {pokemonsJSX}
         </main>
 
     )
