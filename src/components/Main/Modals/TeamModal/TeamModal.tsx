@@ -1,12 +1,12 @@
-import CancelTeamButton from "../../Buttons/CancelTeamButton";
-import DeleteTeamButton from "../../Buttons/DeleteTeamButton";
-import EditTeamButton from "../../Buttons/EditTeamButton";
+import CancelTeamButton from "../../../Buttons/CancelTeamButton";
+import DeleteTeamButton from "../../../Buttons/DeleteTeamButton";
+import EditTeamButton from "../../../Buttons/EditTeamButton";
 import TeamPokemon from "./TeamPokemon";
 
 export default function TeamModal() {
     return(
 
-        <div className="modal is-active" id="team-modal">
+        <div className="modal" id="team-modal">
             <div className="modal-background close" slot="teamModal-background"></div>
             <div className="modal-card">
                 <div className="modal-background has-background-dark"></div>
