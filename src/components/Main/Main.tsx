@@ -9,7 +9,7 @@ import TypeArticle from "./Templates/TypeArticle";
 export default function Main() {
     return(
 
-        <main className="pokemon_container">
+        <main className="pokemon-container">
 
             <HamburgerModal />
             <CreateTeamModal />
