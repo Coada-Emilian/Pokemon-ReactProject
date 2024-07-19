@@ -1,4 +1,5 @@
 import { IPokemon } from "../../@types/types"
+import PokemonArticle from "./Templates/PokemonArticle"
 
 interface MainProps {
     pokemons: IPokemon[]
@@ -7,13 +8,12 @@ interface MainProps {
 export default function Main({pokemons}:MainProps) {
     const pokemonsJSX = pokemons.map((pokemon) => {
         return(
-            <h2 key={pokemon.id}>{pokemon.name}</h2>
+            <PokemonArticle pokemon={pokemon} key={pokemon.id}/>
         ) 
     })
     return(
 
         <main className="pokemon-container">
-            <h1>Pokemon</h1>
             {pokemonsJSX}
         </main>
 

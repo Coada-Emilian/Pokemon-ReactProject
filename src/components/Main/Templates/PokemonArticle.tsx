@@ -1,4 +1,13 @@
-export default function PokemonArticle() {
+import { IPokemon } from "../../../@types/types";
+import image from "../../../assets/img/1.webp"
+
+interface PokemonProps {
+    pokemon: IPokemon
+}
+
+export default function PokemonArticle({pokemon} : PokemonProps) {
+    const imageSource = `${image.slice(0,16)}${pokemon.id}.webp`;
+    const altText = `${pokemon.name} image`
     return(
 
         <article className="pokemon-article">
@@ -10,8 +19,8 @@ export default function PokemonArticle() {
                     <div className="card-image">
                         <figure className="image is-128x128 pokemonArticle-figure">
                             <img
-                                src=""
-                                alt="" 
+                                src={imageSource}
+                                alt= {altText}
                                 slot="pokemon_image"
                                 className="pokemon-image"
                             />
@@ -21,7 +30,7 @@ export default function PokemonArticle() {
                     <div className="card-content">
                         <div className="media">
                             <div className="media-content">
-                                <p className="subtitle is-6 card_title" slot="pokemonArticle_name">Pokemon Name</p>
+                                <p className="subtitle is-6 card_title" slot="pokemonArticle_name">{pokemon.name}</p>
                             </div>
                         </div>
                     </div>
