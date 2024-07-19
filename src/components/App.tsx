@@ -46,12 +46,6 @@ function App() {
 
   return (
     <>
-      <CreateTeamModal />
-      <TeamModal />
-      <PokemonModal />
-      <EditTeamNameModal />
-      <HamburgerModal />
-
       <Header />
       <Main pokemons={pokemons} types={types}/>
     </>   

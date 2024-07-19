@@ -6,16 +6,12 @@ import TeamButton from "../../Buttons/TeamButton";
 export default function HeaderNavBarMenuEndItem1() {
     return(
 
-        <div className="navbar-item">
+        <div className="buttons">
 
-                <div className="buttons">
-
-                    <CreateTeamButton />
-                    <TeamButton />
-                    <SignUpButton />
-                    <SignInButton />
-
-                </div>
+            <CreateTeamButton />
+            <TeamButton />
+            <SignUpButton />
+            <SignInButton />
 
         </div>
 

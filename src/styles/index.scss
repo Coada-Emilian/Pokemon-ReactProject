@@ -5,6 +5,7 @@
 
 :root {
   width: 100%;
+  max-width: 100%;
   font-family: "Montserrat", "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -19,6 +20,10 @@
   -moz-osx-font-smoothing: grayscale;
 
   @include m.flexColumn;
+}
+html{
+	overflow-x:scroll;
+    overflow-y: scroll;
 }
 
 @keyframes vibrate {
@@ -71,5 +76,245 @@
     box-sizing: border-box;
 }
 
+//queries
+/* next breakpoint:450px */
+
+@media (min-width:450px) {
+    html {
+        font-size: 17px;
+    }
+}
+
+/* next breakpoint:600px */
+
+@media (min-width:600px) {
+    html {
+        font-size: 18px;
+    }
+	.image.is-128x128{
+		height:10rem;
+		width:10rem;
+	}
+}
+
+/* next breakpoint:750px */
+
+@media (min-width:750px) {
+    html{
+        font-size: 20px;
+    }
+	.type-article {
+		max-width:5%;
+		font-size: 0.6rem;
+		text-align: center;
+		margin: 0 auto;
+	}
+    
+}
+
+/* next breakpoint:900px */
+
+@media (min-width:900px) {
+    html{
+        font-size: 22px;
+    }
+}
+
+/* next breakpoint:1050px */
+
+@media (min-width:1024px) {
+    html{
+        font-size: 24px;
+    }
+	.navbar {
+		margin-bottom:1rem;
+        align-items: center;
+        justify-content: center;
+	}
+    .navbar>div{
+        width:33%;
+        height:100%;
+    }
+    .field.has-addons{
+        margin:auto 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-form{
+        width:100%;
+        height:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .search-input{
+        font-size: 0.5rem;
+    }
+    .navbar-end{
+       margin-left:10%;
+    }
+    .navbar-item{
+        width: 100%;
+    }
+    .buttons{
+        display: flex;
+        justify-content: space-around;
+    }
+    .button{
+        font-size: 0.5rem;
+    }
+}
+
+/* next breakpoint:1200px */
+
+@media (min-width:1200px) {
+    html{
+        font-size: 16px;
+    }
+    main{
+        height:fit-content;
+        min-height: 100vh;
+    }
+    
+    .team-article {
+        width:50%;
+    }
+    .type-article {
+		max-width:5%;
+		font-size: 0.6rem;
+		text-align: center;
+		margin: 0 auto;
+	}
+    .search-input{
+        font-size: 0.8rem;
+    }
+    .button{
+        font-size: 0.8rem;
+    }
+    .icon-title {
+        font-size: 1.8rem;
+    }
+    .add-button, .remove-button{
+        font-size: 0.7rem
+    }
+}
+
+/* next breakpoint:1320px */
+
+@media (min-width:1320px) {
+    html{
+        font-size: 17px;
+    }
+}
+
+/* next breakpoint:1440px */
+
+@media (min-width:1440px) {
+    html{
+        font-size: 18px;
+    }
+    .type-article{
+        width: 4%;
+    }
+    .add-button, .remove-button{
+        font-size: 0.55rem
+    }
+    .pokemonArticle-figure {
+        padding:0.5rem
+    }
+}
+
+/* next breakpoint:1560px */
+@media (min-width:1560px) {
+    html{
+        font-size: 19px;
+    }
+}
+
+/* next breakpoint:1680px */
+
+@media (min-width:1680px) {
+    html{
+        font-size: 20px;
+    }
+}
+
+/* next breakpoint:1920px */
+
+@media (min-width:1920px) {
+    html{
+        font-size: 22px;
+    }
+    .card{
+        justify-content: center;
+        height:95%
+    }
+    .card_title{
+        font-size: 0.8rem;
+    }
+    .pokemon_article {
+        width: fit-content;
+    }
+    .add-button, .remove-button{
+        font-size: 0.45rem
+    }
+    .pokemonArticle-figure {
+        padding: 0.5rem
+    }
+}
+
+/* next breakpoint:2135px */
+@media (min-width:2135px) {
+    html{
+        font-size: 25px;
+    }
+}
+
+/* next breakpoint:2347px */
+@media (min-width:2347px) {
+    html{
+        font-size: 28px;
+    }
+}
+
+/* next breakpoint:2561px */
+@media (min-width:2347px) {
+    html{
+        font-size: 32px;
+    }
+}
+
+/* next breakpoint:2881px */
+@media (min-width:2881px) {
+    html{
+        font-size: 35px;
+    }
+}
+
+/* next breakpoint:3201px */
+@media (min-width:3201px) {
+    html{
+        font-size: 38px;
+    }
+}
+
+/* next breakpoint:3521px */
+@media (min-width:3521px) {
+    html{
+        font-size: 42px;
+    }
+}
+
+/* next breakpoint:3840px */
+@media (min-width:3840px) {
+    html{
+        font-size: 46px;
+    }
+}
+
+.hidden{
+    display:none
+}
 
 

@@ -12,7 +12,7 @@ interface MainProps {
 export default function Main({pokemons, types}:MainProps) {
     return(
 
-        <main className="main-container">
+        <main className="container">
             <div className="types-container" id="types-container">
                 {types.map((type) => {
                     return(

@@ -5,9 +5,9 @@ export default function HeaderNavBarBrandIcon() {
 
         <a className="navbar-item" href="#" slot="navBar_pokedex_anchor" id="navbar-pokedex">
 
-            <img src={icon} alt="pokedex icon" id="pokedex-icon"/>
+            <img src={icon} alt="pokedex icon" className="pokedex-icon"/>
 
-            <h1 className="title" id="icon-title">O'Pokedex</h1>
+            <h1 className="title icon-title">O'Pokedex</h1>
 
         </a>
         
