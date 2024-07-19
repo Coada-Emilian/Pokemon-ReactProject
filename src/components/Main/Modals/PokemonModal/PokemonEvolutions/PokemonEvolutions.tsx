@@ -1,7 +1,20 @@
+import { useState } from "react";
+import { IPokemon } from "../../../../../@types/types";
 import PokemonEvolutionFigure from "./EvolutionFigures/PokemonEvolutionFigure";
 import PokemonEvolutionIcon from "./EvolutionFigures/PokemonEvolutionIcon";
 
-export default function PokemonEvolutions() {
+interface PokemonProps {
+  pokemon: IPokemon
+}
+
+export default function PokemonEvolutions({pokemon}:PokemonProps) {
+    // const [isDevolution, setIsDevolution] = useState(false);
+    // const [isEvolution, setIsEvolution] = useState(false);
+    
+    // {pokemon.devolution_id && setIsDevolution(true)};
+    // {pokemon.evolution_id && setIsEvolution(true)};
+
+
     return(
 
         <div className="pokemonModal-evolutions">

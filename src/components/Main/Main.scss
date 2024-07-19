@@ -1,6 +1,51 @@
 @use '../../styles/mixins' as m;
 @use '../../styles/variables' as v;
 
+@keyframes vibrate {
+	0% {
+		transform: translate(0);
+	}
+
+	10% {
+		transform: translate(-2px, -2px);
+	}
+
+	20% {
+		transform: translate(2px, -2px);
+	}
+
+	30% {
+		transform: translate(-2px, 2px);
+	}
+
+	40% {
+		transform: translate(2px, 2px);
+	}
+
+	50% {
+		transform: translate(-2px, -2px);
+	}
+
+	60% {
+		transform: translate(2px, -2px);
+	}
+
+	70% {
+		transform: translate(-2px, 2px);
+	}
+
+	80% {
+		transform: translate(-2px, -2px);
+	}
+
+	90% {
+		transform: translate(2px, -2px);
+	}
+
+	100% {
+		transform: translate(0);
+	}
+}
 main {
     padding:0 1rem;
 }
@@ -64,3 +109,10 @@ main {
 .remove-button{
     border-bottom-right-radius: 0.7rem;
 }
+.pokemon-card-anchor :hover{
+    animation: vibrate 3s ease 0s 1 normal forwards;
+}
+
+.pokemon-image{ 
+    -webkit-filter: drop-shadow(5px 5px 5px v.$title-font);
+ }

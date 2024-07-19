@@ -1,19 +1,26 @@
+import { IPokemon } from "../../../../@types/types";
 import PokemonEvolutions from "./PokemonEvolutions/PokemonEvolutions";
 import PokemonStats from "./PokemonStats/PokemonStats";
 import PokemonTypes from "./PokemonTypes/PokemonTypes";
+import image from "../../../../assets/img/1.webp"
 
+interface PokemonProps {
+    pokemon: IPokemon;
+}
 
-export default function PokemonModal() {
+export default function PokemonModal({pokemon} : PokemonProps) {
+    const imageSource = `${image.slice(0,16)}${pokemon.id}.webp`;
+    const altText = `${pokemon.name} image`;
     return(
 
-        <div className="modal" id="pokemon-modal">
+        <div className="modal is-active" id="pokemon-modal">
             <div className="modal-background close" slot="pokemonModal_background"></div>
             <div className="modal-card">
                 <div className="modal-background has-background-dark"></div>
                 <div className="modal-content">
 
                     <div className="modal-title">
-                        <p className="title modal_title" slot="modal_title">Title</p>
+                        <p className="title modal_title" slot="modal_title">{pokemon.name}</p>
                         <button className="delete close" type="button" slot="editTeamName_modal_button"></button>
                     </div>
 
@@ -21,24 +28,24 @@ export default function PokemonModal() {
 
                         <div className="image">
                             <p className="image is-128x128">
-                                <img src="" alt="" slot="pokemonModal_image"/>
+                                <img src={imageSource} alt={altText} slot="pokemonModal_image"/>
                             </p>
                         </div>
 
                         <div className="description">
                             <p className="modal_description" slot="pokemonModal_description">
-                                Description
+                                {pokemon.description}
                             </p>
                         </div>
 
                     </div>
 
                     <div className="pokemonModal-stats-types">
-                        <PokemonStats />
-                        <PokemonTypes />
+                        <PokemonStats pokemon={pokemon}/>
+                        <PokemonTypes types={pokemon.types}/>
                     </div>
 
-                    <PokemonEvolutions />
+                    <PokemonEvolutions pokemon={pokemon}/>
 
                     <footer className="card-footer">
                         <button className="button is-light" slot="pokemonModal_compare_button">Comparer</button>

@@ -1,10 +1,15 @@
-export default function PokemonStat() {
+interface StatProps {
+    stat: number;
+    title: string;
+}
+
+export default function PokemonStat({stat, title} : StatProps) {
     return(
         <>
-            <p className="pokemonModal-stats-paragraph">HP</p>
+            <p className="pokemonModal-stats-paragraph"> {title}</p>
             <div className="pokemonModal-progressBar">
-                <progress className="progress is-small is-primary" value="45" max="100" slot="modal-hp"></progress>
-                <span className="stats_paragraph" slot="hp_value">45%</span>
+                <progress className="progress is-small is-info" value={stat} max="100" slot="modal-stat"></progress>
+                <span className="stats_paragraph" slot="hp_value">{stat}%</span>
             </div>
         </>
     )
