@@ -1,7 +1,7 @@
 export default function HeaderNavBarSearchForm() {
     return(
 
-        <form action="#" className="search-pokemon_form search-form" >
+        <form action="#" className="search-pokemon_form search-form" slot="search-form" >
 
             <div className="control">
                 <input className="input" name="term" type="text" placeholder="Find a pokemon" slot="search-input"/>
@@ -9,7 +9,7 @@ export default function HeaderNavBarSearchForm() {
 
             <div className="control">
                 <button className="button is-success">
-                    Find Pookemon
+                    Find Pokemon
                 </button>
             </div>
 
@@ -18,4 +18,3 @@ export default function HeaderNavBarSearchForm() {
     )
 }
 
-// slot="search-form"
