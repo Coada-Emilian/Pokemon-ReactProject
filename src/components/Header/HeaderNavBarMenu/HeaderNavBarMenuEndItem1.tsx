@@ -1,3 +1,8 @@
+import CreateTeamButton from "../../Buttons/CreateTeamButton";
+import SignInButton from "../../Buttons/SignInButton";
+import SignUpButton from "../../Buttons/SignUpButton";
+import TeamButton from "../../Buttons/TeamButton";
+
 export default function HeaderNavBarMenuEndItem1() {
     return(
 
@@ -5,31 +10,14 @@ export default function HeaderNavBarMenuEndItem1() {
 
                 <div className="buttons">
 
-                    <a className="button is-primary" slot="teams-button">
-                        <strong>
-                            Équipes
-                        </strong>
-                    </a>
-
-                    <a className="button is-primary hidden" slot="create_team-button">
-                        <strong>
-                            Créer une équipe
-                        </strong>
-                    </a>
-
-                    <a className="button is-dark" slot="register-button">
-                        <strong>
-                            Enregistrement
-                        </strong>
-                    </a>
-
-                    <a className="button is-light" slot="login-button">
-                        Se connecter
-                    </a>
+                    <CreateTeamButton />
+                    <TeamButton />
+                    <SignUpButton />
+                    <SignInButton />
 
                 </div>
 
-            </div>
+        </div>
 
     )
 }
