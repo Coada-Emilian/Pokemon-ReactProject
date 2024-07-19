@@ -33,5 +33,6 @@ export default function CreateTeamModal() {
                 </div>
             </div>
         </div>
+        
     )
 }
