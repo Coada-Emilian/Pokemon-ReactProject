@@ -6,7 +6,7 @@ import PokemonTypes from "./PokemonTypes/PokemonTypes";
 export default function PokemonModal() {
     return(
 
-        <div className="modal is-active" id="pokemon-modal">
+        <div className="modal" id="pokemon-modal">
             <div className="modal-background close" slot="pokemonModal_background"></div>
             <div className="modal-card">
                 <div className="modal-background has-background-dark"></div>
