@@ -13,6 +13,7 @@ import getAllTypes from "./Api/getAllTypes";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
+
   useEffect(() => {
     const fetchPokemonData = async () => {
       const data = await getAllPokemon();
@@ -24,6 +25,7 @@ function App() {
     };
     fetchPokemonData();
   }, []);
+
   const pokemons = [...pokemonData];
 
   const [typesData, setTypesData] = useState([]);
@@ -38,6 +40,7 @@ function App() {
     };
     fetchTypesData();
   }, []);
+
   const types = [...typesData];
 
   return (

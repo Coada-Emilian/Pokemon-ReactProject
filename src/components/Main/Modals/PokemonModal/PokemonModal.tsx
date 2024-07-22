@@ -4,6 +4,8 @@ import PokemonStats from "./PokemonStats/PokemonStats";
 import PokemonTypes from "./PokemonTypes/PokemonTypes";
 import image from "../../../../assets/img/1.webp";
 
+import "./PokemonModal.scss";
+
 interface PokemonProps {
   pokemon: IPokemon;
 }
@@ -21,7 +23,7 @@ export default function PokemonModal({ pokemon }: PokemonProps) {
         <div className="modal-background has-background-dark"></div>
         <div className="modal-content">
           <div className="modal-title">
-            <p className="title modal_title" slot="modal_title">
+            <p className="title modal-subtitle" slot="modal_title">
               {pokemon.name}
             </p>
             <button

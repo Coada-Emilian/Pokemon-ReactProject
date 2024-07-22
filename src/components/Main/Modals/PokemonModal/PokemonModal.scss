@@ -1,0 +1,26 @@
+@use "../../../../styles/mixins" as m;
+@use "../../../../styles/variables" as v;
+
+.title {
+  color: v.$title-font;
+}
+.modal-card {
+  width: 85%;
+  height: fit;
+}
+.modal-content {
+  width: 90%;
+}
+.title:not(:last-child) {
+  margin-bottom: 0;
+}
+.modal-title {
+  @include m.flexRowSpaceBetween;
+  padding: 1rem 0.3rem;
+  margin-bottom: 0.5rem;
+}
+.pokemonModal-description {
+  @include m.flexRowSpaceBetween;
+  gap: 1rem;
+  color: v.$title-font;
+}
