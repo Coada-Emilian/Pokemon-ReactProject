@@ -19,8 +19,41 @@
   padding: 1rem 0.3rem;
   margin-bottom: 0.5rem;
 }
-.pokemonModal-description {
+.pokemonModal-description,
+.pokemonModal-progressBar {
   @include m.flexRowSpaceBetween;
   gap: 1rem;
   color: v.$title-font;
+}
+
+.pokemon-stat,
+.types,
+.pokemonModal-evolutions-title {
+  color: v.$title-font;
+  margin-bottom: 0.5rem;
+}
+.progress:not(:last-child) {
+  margin-bottom: 0;
+}
+.types_buttons {
+  @include m.flexRowSpaceBetween;
+  justify-content: space-around;
+}
+.pokemonModal-evolutions {
+  margin-bottom: 2.5rem;
+  color: v.$title-font;
+}
+.pokemonModal-evolutions-figures {
+  @include m.flexRowSpaceBetween;
+}
+.figure_image-title {
+  text-align: center;
+  border: 3px solid white;
+  padding: 0.5rem;
+  border-radius: 5rem;
+}
+
+.pokemon-figure {
+  @include m.flexColumn;
+  gap: 1rem;
 }

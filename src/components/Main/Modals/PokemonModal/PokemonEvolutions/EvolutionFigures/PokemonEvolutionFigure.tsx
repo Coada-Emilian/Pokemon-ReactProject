@@ -13,7 +13,7 @@ export default function PokemonEvolutionFigure({
   return (
     <div className="pokemonModal-evolutions-figure">
       <div className="figure_image-title">
-        <figure className="image is-96x96">
+        <figure className="image is-96x96 pokemon-figure">
           <img
             className="is-rounded figure_image"
             src={imageSource}

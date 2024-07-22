@@ -5,7 +5,7 @@ interface StatProps {
 
 export default function PokemonStat({ stat, title }: StatProps) {
   return (
-    <>
+    <div className="pokemon-stat">
       <p className="pokemonModal-stats-paragraph"> {title}</p>
       <div className="pokemonModal-progressBar">
         <progress
@@ -18,6 +18,6 @@ export default function PokemonStat({ stat, title }: StatProps) {
           {stat}%
         </span>
       </div>
-    </>
+    </div>
   );
 }
