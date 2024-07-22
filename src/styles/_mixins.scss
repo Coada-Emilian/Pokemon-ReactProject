@@ -4,20 +4,18 @@
 
 /* Typography */
 @mixin bold {
-    font-weight: 700;
+  font-weight: 700;
 }
 
-
 @mixin flexColumn {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @mixin flexRow {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 //pokedex logo
-

@@ -1,15 +1,11 @@
 import HeaderNavBar from "./HeaderNavBar";
 
-import "./Header.scss"
+import "./Header.scss";
 
 export default function Header() {
-    return(
-
-        <header>
-
-            <HeaderNavBar />
-            
-        </header>
-
-    )
+  return (
+    <header>
+      <HeaderNavBar />
+    </header>
+  );
 }

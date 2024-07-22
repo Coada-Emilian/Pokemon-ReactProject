@@ -1,30 +1,23 @@
-import { IType } from "../../../@types/types"
+import { IType } from "../../../@types/types";
 
-import logo from "../../../assets/icons/pokemon-type-svg-icons-master/icons/Acier.svg"
+import logo from "../../../assets/icons/pokemon-type-svg-icons-master/icons/Acier.svg";
 
 interface TypesProps {
-    type: IType;
+  type: IType;
 }
 
-export default function TypeArticle({type} : TypesProps) {
-    const logoSource = `${logo.slice(0,54)}${type.name}.svg`
-    const imageAlt = `${type.name} logo`
-    
-    return(
+export default function TypeArticle({ type }: TypesProps) {
+  const logoSource = `${logo.slice(0, 54)}${type.name}.svg`;
+  const imageAlt = `${type.name} logo`;
 
-        <article className="type-article">
-
-            <a href="#" className="type-button" slot="type_icon">
-                <img 
-                    src={logoSource} 
-                    alt={imageAlt} 
-                    className="" 
-                    slot="type_image" 
-                />
-                <p className="type-name" slot="type_name">{type.name}</p>
-            </a>
-
-        </article>
-    
-    )
+  return (
+    <article className="type-article">
+      <a href="#" className="type-button" slot="type_icon">
+        <img src={logoSource} alt={imageAlt} className="" slot="type_image" />
+        <p className="type-name" slot="type_name">
+          {type.name}
+        </p>
+      </a>
+    </article>
+  );
 }

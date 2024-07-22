@@ -2,42 +2,39 @@
 @use "../../styles/mixins" as m;
 
 #navbar {
-    width:100%;
+  width: 100%;
 }
 
 .navbar-brand {
-    width:100%;
-    margin-bottom: 0.5rem;
-    align-items: center;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  align-items: center;
 }
-
 
 .navbar-item {
-    width:50%;
+  width: 50%;
 }
 .pokedex-icon {
-    max-width:20%;
+  max-width: 20%;
 }
 .icon-title {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 .hamburger-element {
-    width:50%;   
+  width: 50%;
 }
-.navbar-burger span{
-    left: calc(75%)
+.navbar-burger span {
+  left: calc(75%);
 }
 .search-form {
-    width:85%;
-    display: flex;
-    justify-content: center;
-    margin:auto auto;
-    padding-bottom: 0.5rem;
-    height: fit-content;
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  margin: auto auto;
+  padding-bottom: 0.5rem;
+  height: fit-content;
 }
-.search-input,.find-button{
-    font-size: 0.7rem;
+.search-input,
+.find-button {
+  font-size: 0.7rem;
 }
-
-
-

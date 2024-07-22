@@ -1,118 +1,118 @@
-@use '../../styles/mixins' as m;
-@use '../../styles/variables' as v;
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
 
 @keyframes vibrate {
-	0% {
-		transform: translate(0);
-	}
+  0% {
+    transform: translate(0);
+  }
 
-	10% {
-		transform: translate(-2px, -2px);
-	}
+  10% {
+    transform: translate(-2px, -2px);
+  }
 
-	20% {
-		transform: translate(2px, -2px);
-	}
+  20% {
+    transform: translate(2px, -2px);
+  }
 
-	30% {
-		transform: translate(-2px, 2px);
-	}
+  30% {
+    transform: translate(-2px, 2px);
+  }
 
-	40% {
-		transform: translate(2px, 2px);
-	}
+  40% {
+    transform: translate(2px, 2px);
+  }
 
-	50% {
-		transform: translate(-2px, -2px);
-	}
+  50% {
+    transform: translate(-2px, -2px);
+  }
 
-	60% {
-		transform: translate(2px, -2px);
-	}
+  60% {
+    transform: translate(2px, -2px);
+  }
 
-	70% {
-		transform: translate(-2px, 2px);
-	}
+  70% {
+    transform: translate(-2px, 2px);
+  }
 
-	80% {
-		transform: translate(-2px, -2px);
-	}
+  80% {
+    transform: translate(-2px, -2px);
+  }
 
-	90% {
-		transform: translate(2px, -2px);
-	}
+  90% {
+    transform: translate(2px, -2px);
+  }
 
-	100% {
-		transform: translate(0);
-	}
+  100% {
+    transform: translate(0);
+  }
 }
 main {
-    padding:0 1rem;
+  padding: 0 1rem;
 }
 
 .main-container {
-    @include m.flexColumn;
-    justify-content: space-between;
+  @include m.flexColumn;
+  justify-content: space-between;
 }
 
 .types-container {
-    @include m.flexRow; 
-    width:95%;
-    margin:0.5 auto;
-    gap:0.2rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.5rem;
+  @include m.flexRow;
+  width: 95%;
+  margin: 0.5 auto;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
 }
 
 .type-article {
-    max-width:8%;
-    font-size: 0.4rem;
-    text-align: center;
-    margin: 0 auto;
+  max-width: 8%;
+  font-size: 0.4rem;
+  text-align: center;
+  margin: 0 auto;
 }
 .pokemon-container {
-    @include m.flexRow;
-    flex-wrap: wrap;
-    gap:0.5rem;
+  @include m.flexRow;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 .pokemon-article {
-    width:fit-content;
-    margin: 0 auto;
-    background-color: v.$main-background;
+  width: fit-content;
+  margin: 0 auto;
+  background-color: v.$main-background;
 }
-.pokemon-card{
-    background-color: v.$main-background;
-    border:1px solid v.$title-font;
-    border-radius: 0.7rem;
+.pokemon-card {
+  background-color: v.$main-background;
+  border: 1px solid v.$title-font;
+  border-radius: 0.7rem;
 }
 .pokemonArticle-figure {
-    margin: 0 auto;
-    padding:0.2rem
+  margin: 0 auto;
+  padding: 0.2rem;
 }
-.card_title{
-    color: v.$title-font;
-    text-align: center;
+.card_title {
+  color: v.$title-font;
+  text-align: center;
 }
-.card-footer{
-    width:100%;
-    
+.card-footer {
+  width: 100%;
 }
-.add-button, .remove-button{
-    width:50%;
-    height: 1.5rem;
-    font-size: 0.5rem;
-    @include m.bold;
+.add-button,
+.remove-button {
+  width: 50%;
+  height: 1.5rem;
+  font-size: 0.5rem;
+  @include m.bold;
 }
-.add-button{
-    border-bottom-left-radius: 0.7rem;
+.add-button {
+  border-bottom-left-radius: 0.7rem;
 }
-.remove-button{
-    border-bottom-right-radius: 0.7rem;
+.remove-button {
+  border-bottom-right-radius: 0.7rem;
 }
-.pokemon-card-anchor :hover{
-    animation: vibrate 3s ease 0s 1 normal forwards;
+.pokemon-card-anchor :hover {
+  animation: vibrate 3s ease 0s 1 normal forwards;
 }
 
-.pokemon-image{ 
-    -webkit-filter: drop-shadow(5px 5px 5px v.$title-font);
- }
+.pokemon-image {
+  -webkit-filter: drop-shadow(5px 5px 5px v.$title-font);
+}
