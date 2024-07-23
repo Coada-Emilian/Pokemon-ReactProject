@@ -5,7 +5,6 @@ import PokemonTypes from "./PokemonTypes/PokemonTypes";
 import image from "../../../../assets/img/1.webp";
 
 import "./PokemonModal.scss";
-import { useState } from "react";
 
 interface PokemonModalProps {
   pokemon: IPokemon;
