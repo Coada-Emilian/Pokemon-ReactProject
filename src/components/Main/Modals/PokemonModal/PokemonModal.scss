@@ -17,11 +17,27 @@
   padding: 1rem 0.3rem;
   margin-bottom: 0.5rem;
 }
+.pokemonModal_image {
+  width: 100%;
+}
 .pokemonModal-description {
   @include m.flexRowSpaceBetween;
   gap: 1rem;
   color: v.$title-font;
+  margin-bottom: 1rem;
+}
+.image-container {
+  width: 5rem;
+}
+.modal-description {
+  width: 50%;
 }
 .modal_description {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
+}
+
+@media (min-width: 1024px) {
+  .image-container {
+    width: 10rem;
+  }
 }

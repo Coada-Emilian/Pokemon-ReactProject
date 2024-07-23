@@ -44,17 +44,18 @@ export default function PokemonModal({
           </div>
 
           <div className="pokemonModal-description">
-            <div className="image">
-              <p className="image is-128x128">
+            <div className="image pokemonModal-img">
+              <p className="image-container">
                 <img
                   src={pokemon.gif}
                   alt={altText}
                   slot="pokemonModal_image"
+                  className="pokemonModal-image"
                 />
               </p>
             </div>
 
-            <div className="description">
+            <div className="modal-description">
               <p className="modal_description" slot="pokemonModal_description">
                 {pokemon.description}
               </p>

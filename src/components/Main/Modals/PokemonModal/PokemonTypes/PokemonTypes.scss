@@ -15,6 +15,12 @@
   justify-content: space-around;
 }
 
-.type-button {
+.modalType-button {
   color: v.$title-font;
+}
+
+@media (min-width: 1024px) {
+  .types_buttons .modalType-button {
+    font-size: 1rem;
+  }
 }
