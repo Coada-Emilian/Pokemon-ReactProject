@@ -48,3 +48,15 @@ export interface IPokemonHasType {
   pokemon_id: number;
   type_id: number;
 }
+
+export interface IPokemonAPI {
+  count: number;
+  next: string;
+  previous: any;
+  results: Result[];
+}
+
+export interface Result {
+  name: string;
+  url: string;
+}

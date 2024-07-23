@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IPokemon } from "../../../@types/types";
 import image from "../../../assets/img/1.webp";
 import PokemonModal from "../Modals/PokemonModal/PokemonModal";

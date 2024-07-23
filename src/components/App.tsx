@@ -4,17 +4,31 @@ import getAllPokemon from "./Api/getAllPokemon";
 
 import Header from "./Header/Header";
 import Main from "./Main/Main";
-import CreateTeamModal from "./Main/Modals/CreateTeamModal";
-import TeamModal from "./Main/Modals/TeamModal/TeamModal";
-import PokemonModal from "./Main/Modals/PokemonModal/PokemonModal";
-import EditTeamNameModal from "./Main/Modals/EditTeamNameModal";
-import HamburgerModal from "./Main/Modals/HamburgerModal";
+
 import getAllTypes from "./Api/getAllTypes";
+import getAllPokemonApi from "./Api/getAllPokemonApi";
+import { IPokemonAPI } from "../@types/types";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
+  const [pokemonApi, setPokemonApi] = useState<IPokemonAPI>({
+    count: 0,
+    next: "",
+    previous: null,
+    results: [],
+  });
 
   useEffect(() => {
+    const fetchPokemonDataFromApi = async () => {
+      const data = await getAllPokemonApi();
+      if (data) {
+        setPokemonApi(data);
+      } else {
+        console.log("Failed to fetch Pokemon data");
+      }
+    };
+    fetchPokemonDataFromApi();
+
     const fetchPokemonData = async () => {
       const data = await getAllPokemon();
       if (data) {
@@ -27,6 +41,8 @@ function App() {
   }, []);
 
   const pokemons = [...pokemonData];
+
+  const pokemonsInApi = [...pokemonApi.results];
 
   const [typesData, setTypesData] = useState([]);
   useEffect(() => {
@@ -46,7 +62,7 @@ function App() {
   return (
     <>
       <Header />
-      <Main pokemons={pokemons} types={types} />
+      <Main pokemons={pokemons} types={types} pokemonsInApi={pokemonsInApi} />
     </>
   );
 }
