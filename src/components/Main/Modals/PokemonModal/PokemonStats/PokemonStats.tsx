@@ -1,6 +1,8 @@
 import { IPokemon } from "../../../../../@types/types";
 import PokemonStat from "./PokemonStat";
 
+import "./PokemonStats.scss";
+
 interface PokemonProps {
   pokemon: IPokemon;
 }

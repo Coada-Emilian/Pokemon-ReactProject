@@ -1,0 +1,20 @@
+@use "../../../../../styles/mixins" as m;
+@use "../../../../../styles/variables" as v;
+
+.types {
+  color: v.$title-font;
+  margin-bottom: 0.5rem;
+}
+
+.types_paragraph {
+  margin-bottom: 0.5rem;
+}
+
+.types_buttons {
+  @include m.flexRowSpaceBetween;
+  justify-content: space-around;
+}
+
+.type-button {
+  color: v.$title-font;
+}

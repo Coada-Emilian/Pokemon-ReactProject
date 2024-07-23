@@ -4,7 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  width: 100%;
+  width: 80%;
   max-width: 100%;
   font-family: "Montserrat", "Inter", system-ui, Avenir, Helvetica, Arial,
     sans-serif;
@@ -23,10 +23,8 @@
   @include m.flexColumn;
 }
 html {
-  overflow-x: scroll;
-  overflow-y: scroll;
+  min-width: 80%;
 }
-
 *,
 *:before,
 *:after {

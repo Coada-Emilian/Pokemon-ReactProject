@@ -1,0 +1,43 @@
+@use "../../../../../styles/mixins" as m;
+@use "../../../../../styles/variables" as v;
+
+.pokemonModal-evolutions {
+  margin-bottom: 2.5rem;
+  color: v.$title-font;
+  width: 80%;
+}
+.pokemonModal-evolutions-title {
+  color: v.$title-font;
+  margin-bottom: 0.5rem;
+}
+.pokemonModal-evolutions-figures {
+  @include m.flexColumn;
+  align-items: center;
+  text-align: center;
+  width: 125%;
+  gap: 1rem;
+}
+
+.pokemonModal-evolutions-figure {
+  width: 50%;
+}
+.figure_image-title {
+  text-align: center;
+  border: 3px solid white;
+  padding: 0.5rem;
+  border-radius: 5rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+.pokemon-figure {
+  @include m.flexColumn;
+  gap: 1rem;
+}
+.figure_image {
+  margin: 0 auto;
+  width: 75%;
+}
+
+.figure_icon {
+  transform: rotate(90deg);
+}

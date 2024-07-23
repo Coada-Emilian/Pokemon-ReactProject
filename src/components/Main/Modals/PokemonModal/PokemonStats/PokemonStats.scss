@@ -1,0 +1,17 @@
+@use "../../../../../styles/mixins" as m;
+@use "../../../../../styles/variables" as v;
+
+.pokemonModal-progressBar {
+  @include m.flexRowSpaceBetween;
+  gap: 1rem;
+  color: v.$title-font;
+}
+
+.pokemon-stat {
+  color: v.$title-font;
+  margin-bottom: 0.5rem;
+}
+
+.progress:not(:last-child) {
+  margin-bottom: 0;
+}

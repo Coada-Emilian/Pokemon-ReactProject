@@ -4,6 +4,8 @@ import PokemonEvolutionFigure from "./EvolutionFigures/PokemonEvolutionFigure";
 import PokemonEvolutionIcon from "./EvolutionFigures/PokemonEvolutionIcon";
 import getPokemonById from "../../../../Api/getPokemonById";
 
+import "./PokemonEvolutions.scss";
+
 interface PokemonProps {
   pokemon: IPokemon;
 }

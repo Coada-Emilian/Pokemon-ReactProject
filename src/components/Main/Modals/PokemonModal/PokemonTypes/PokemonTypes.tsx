@@ -1,6 +1,8 @@
 import { IType } from "../../../../../@types/types";
 import PokemonType from "./PokemonType";
 
+import "./PokemonTypes.scss";
+
 interface TypeProps {
   types: IType[];
 }

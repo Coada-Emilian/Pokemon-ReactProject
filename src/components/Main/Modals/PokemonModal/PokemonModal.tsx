@@ -14,7 +14,7 @@ export default function PokemonModal({ pokemon }: PokemonProps) {
   const imageSource = `${image.slice(0, 16)}${pokemon.id}.webp`;
   const altText = `${pokemon.name} image`;
   return (
-    <div className="modal is-active" id="pokemon-modal">
+    <div className="modal is-active pokemon-modal" id="pokemon-modal">
       <div
         className="modal-background close"
         slot="pokemonModal_background"
