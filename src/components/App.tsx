@@ -43,6 +43,11 @@ function App() {
   const pokemons = [...pokemonData];
 
   const pokemonsInApi = [...pokemonApi.results];
+  pokemonsInApi.forEach((pokemon) => {
+    const id = parseInt(pokemon.url.slice(34));
+    pokemon.id = id;
+    console.log(pokemon.id);
+  });
 
   const [typesData, setTypesData] = useState([]);
   useEffect(() => {

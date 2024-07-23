@@ -11,6 +11,7 @@ interface MainProps {
 }
 
 export default function Main({ pokemons, types, pokemonsInApi }: MainProps) {
+  console.log(pokemonsInApi);
   return (
     <main className="container">
       <div className="types-container" id="types-container">
