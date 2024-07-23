@@ -47,7 +47,7 @@ export default function PokemonModal({
             <div className="image">
               <p className="image is-128x128">
                 <img
-                  src={imageSource}
+                  src={pokemon.gif}
                   alt={altText}
                   slot="pokemonModal_image"
                 />

@@ -1,17 +1,17 @@
-import { IPokemon, IType, Result } from "../../@types/types";
+import { IPokemon, IType } from "../../@types/types";
 import PokemonArticle from "./Templates/PokemonArticle";
 import TypeArticle from "./Templates/TypeArticle";
 
 import "./Main.scss";
+import { Result } from "../../@types/pokemonApi";
 
 interface MainProps {
   pokemons: IPokemon[];
   types: IType[];
-  pokemonsInApi: Result[];
+  // pokemonsInApi: Result[];
 }
 
-export default function Main({ pokemons, types, pokemonsInApi }: MainProps) {
-  console.log(pokemonsInApi);
+export default function Main({ pokemons, types }: MainProps) {
   return (
     <main className="container">
       <div className="types-container" id="types-container">
@@ -27,7 +27,16 @@ export default function Main({ pokemons, types, pokemonsInApi }: MainProps) {
       </div>
       {/* <div className="pokemonApi-container">
         {pokemonsInApi.map((pokemon) => {
-          return <h1 key={pokemon.name}>{pokemon.name}</h1>;
+          return (
+            <div className="pokemon-card">
+              <h1 key={pokemon.name}>{pokemon.name}</h1>
+              <img
+                src={pokemon.sprites.other.showdown.front_default}
+                alt=""
+                key={pokemon.id}
+              />
+            </div>
+          );
         })}
       </div> */}
     </main>

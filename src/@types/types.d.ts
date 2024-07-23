@@ -14,6 +14,7 @@ export interface IPokemon {
   speed: number;
   teams?: ITeam[];
   types: IType[];
+  gif?: string;
 }
 
 export interface ITeam {
@@ -47,17 +48,4 @@ export interface IPokemonHasType {
   updatedAt?: Date;
   pokemon_id: number;
   type_id: number;
-}
-
-export interface IPokemonAPI {
-  count: number;
-  next: string;
-  previous: any;
-  results: Result[];
-}
-
-export interface Result {
-  name: string;
-  url: string;
-  id?: number;
 }
