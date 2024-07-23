@@ -1,9 +1,6 @@
 @use "../../../../styles/mixins" as m;
 @use "../../../../styles/variables" as v;
 
-#pokemon-modal {
-  width: 80%;
-}
 .title {
   color: v.$title-font;
   font-size: 1.5rem;
