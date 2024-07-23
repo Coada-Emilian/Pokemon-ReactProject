@@ -64,7 +64,9 @@ export default function PokemonArticle({ pokemon }: PokemonProps) {
           </div>
         </div>
       </a>
-      {isModalOn && <PokemonModal pokemon={pokemon} />}
+      {isModalOn && (
+        <PokemonModal pokemon={pokemon} setIsModalOn={setIsModalOn} />
+      )}
     </article>
   );
 }

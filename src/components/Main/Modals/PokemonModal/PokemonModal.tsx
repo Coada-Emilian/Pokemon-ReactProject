@@ -5,12 +5,17 @@ import PokemonTypes from "./PokemonTypes/PokemonTypes";
 import image from "../../../../assets/img/1.webp";
 
 import "./PokemonModal.scss";
+import { useState } from "react";
 
-interface PokemonProps {
+interface PokemonModalProps {
   pokemon: IPokemon;
+  setIsModalOn: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function PokemonModal({ pokemon }: PokemonProps) {
+export default function PokemonModal({
+  pokemon,
+  setIsModalOn,
+}: PokemonModalProps) {
   const imageSource = `${image.slice(0, 16)}${pokemon.id}.webp`;
   const altText = `${pokemon.name} image`;
   return (
@@ -18,6 +23,9 @@ export default function PokemonModal({ pokemon }: PokemonProps) {
       <div
         className="modal-background close"
         slot="pokemonModal_background"
+        onClick={() => {
+          setIsModalOn(false);
+        }}
       ></div>
       <div className="modal-card">
         <div className="modal-background has-background-dark"></div>
@@ -30,6 +38,9 @@ export default function PokemonModal({ pokemon }: PokemonProps) {
               className="delete close"
               type="button"
               slot="editTeamName_modal_button"
+              onClick={() => {
+                setIsModalOn(false);
+              }}
             ></button>
           </div>
 
