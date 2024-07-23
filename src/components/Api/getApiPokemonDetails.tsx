@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//fetch pokemon details from api
 export default async function getApiPokemonDetails(url: string) {
   try {
     const response = await axios.get(url);

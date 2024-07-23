@@ -1,7 +1,7 @@
 import axios from "axios";
 import apiBaseUrl from "./config";
 
-//Fetching all pokemon
+//Fetching pokemon by id
 export default async function getPokemonById(id: number) {
   try {
     const response = await axios.get(`${apiBaseUrl}/pokemon/${id}`);

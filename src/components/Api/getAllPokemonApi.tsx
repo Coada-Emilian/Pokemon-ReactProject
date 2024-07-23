@@ -1,6 +1,6 @@
 import axios from "axios";
 
-//Fetching all pokemon
+//Fetching all pokemon from Api
 export default async function getAllPokemonApi() {
   try {
     const response = await axios.get(

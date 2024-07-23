@@ -6,9 +6,13 @@ import Header from "./Header/Header";
 import Main from "./Main/Main";
 
 import getAllTypes from "./Api/getAllTypes";
+
 // import getAllPokemonApi from "./Api/getAllPokemonApi";
 // import { IPokemonAPI } from "../@types/pokemonApi";
-import getApiPokemonDetails from "./Api/getApiPokemonDetails";
+// import getApiPokemonDetails from "./Api/getApiPokemonDetails";
+
+import { IPokemon } from "../@types/types";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -42,7 +46,7 @@ function App() {
   }, []);
 
   const pokemons = [...pokemonData];
-  pokemons.forEach((pokemon) => {
+  pokemons.forEach((pokemon: IPokemon) => {
     pokemon.gif = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${pokemon.id}.gif`;
   });
 
@@ -101,7 +105,9 @@ function App() {
   return (
     <>
       <Header />
-      <Main pokemons={pokemons} types={types} />
+      <Routes>
+        <Route path="/" element={<Main pokemons={pokemons} types={types} />} />
+      </Routes>
     </>
   );
 }
