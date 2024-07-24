@@ -13,6 +13,7 @@ import getAllTypes from "./Api/getAllTypes";
 
 import { IPokemon } from "../@types/types";
 import { Route, Routes } from "react-router-dom";
+import MainTypePokemon from "./Main/TypePokemon/MainTypePokemon";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -107,6 +108,10 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Main pokemons={pokemons} types={types} />} />
+        <Route
+          path="/pokemonsOfType/:typeName"
+          element={<MainTypePokemon pokemons={pokemons} types={types} />}
+        />
       </Routes>
     </>
   );

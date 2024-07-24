@@ -31,8 +31,6 @@
 }
 .modal-description {
   width: 50%;
-}
-.modal_description {
   font-size: 0.8rem;
 }
 
@@ -47,5 +45,8 @@
   }
   .modal-card .modal-content {
     width: 100%;
+  }
+  .modal_description {
+    font-size: 1.5rem;
   }
 }
