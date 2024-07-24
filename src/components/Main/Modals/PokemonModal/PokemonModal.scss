@@ -41,3 +41,11 @@
     width: 10rem;
   }
 }
+@media (min-width: 1200px) {
+  .modal-card {
+    width: 70%;
+  }
+  .modal-card .modal-content {
+    width: 100%;
+  }
+}
