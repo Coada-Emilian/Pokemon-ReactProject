@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { IPokemon } from '../../../@types/types';
 import image from '../../../assets/img/1.webp';
 import PokemonModal from '../Modals/PokemonModal/PokemonModal';
+import TypeIcon from './TypeIcon';
 
 interface PokemonProps {
   pokemon: IPokemon;
@@ -29,6 +30,12 @@ export default function PokemonArticle({ pokemon }: PokemonProps) {
           <div className="pokemon-card" slot="pokemonArticle_card">
             <div className="card-image">
               <figure className="image is-128x128 pokemonArticle-figure">
+                <div className="type-icons">
+                  {pokemon.types.map((type) => {
+                    return <TypeIcon type={type} key={type.id} />;
+                  })}
+                </div>
+
                 <img
                   src={imageSource}
                   alt={altText}

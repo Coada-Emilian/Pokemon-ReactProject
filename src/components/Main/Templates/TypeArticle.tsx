@@ -20,7 +20,12 @@ export default function TypeArticle({ type }: TypesProps) {
         className="type-button"
         slot="type_icon"
       >
-        <img src={logoSource} alt={imageAlt} className="" slot="type_image" />
+        <img
+          src={logoSource}
+          alt={imageAlt}
+          className="type-image"
+          slot="type-image"
+        />
         <p className="type-name" slot="type_name">
           {type.name}
         </p>

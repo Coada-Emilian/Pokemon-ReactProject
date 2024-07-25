@@ -85,6 +85,16 @@ main {
   border: 1px solid v.$title-font;
   border-radius: 0.7rem;
 }
+.type-icons {
+  width:100%;
+  display: flex;
+  gap:0.5rem;
+  margin:0.3rem 0;
+  
+}
+.type-icon{
+  width:15%;
+}
 .pokemonArticle-figure {
   margin: 0 auto;
   padding: 0.2rem;
