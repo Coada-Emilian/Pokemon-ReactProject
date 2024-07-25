@@ -3,28 +3,30 @@ module.exports = {
   env: { browser: true, es2020: true },
   extends: [
     // 'eslint:recommended',
-    'airbnb',
-    'airbnb-typescript',
-    'airbnb/hooks',
-    'plugin:@typescript-eslint/recommended',
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
     // 'plugin:react-hooks/recommended',
-    'plugin:react/recommended',
+    "plugin:react/recommended",
+    "plugin:prettier/recommended", // must be the last one
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parser: '@typescript-eslint/parser',parserOptions: {
+  ignorePatterns: ["dist", ".eslintrc.cjs"],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: './tsconfig.app.json', // LIGNE TRÈS IMPORTANTE !
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: "./tsconfig.app.json", // LIGNE TRÈS IMPORTANTE !
     tsconfigRootDir: __dirname,
   },
-  plugins: ['@typescript-eslint', 'react', 'react-refresh'],
+  plugins: ["@typescript-eslint", "react", "react-refresh", "prettier"],
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
+    "react-refresh/only-export-components": [
+      "warn",
       { allowConstantExport: true },
     ],
   },
-}
+};
