@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function HeaderNavBarSearchForm() {
   return (
     <form action="#" className="search-form" slot="search-form">
@@ -12,7 +14,9 @@ export default function HeaderNavBarSearchForm() {
       </div>
 
       <div className="control">
-        <button className="button is-info find-button">Find Pokemon</button>
+        <button type="submit" className="button is-info find-button">
+          Find Pokemon
+        </button>
       </div>
     </form>
   );

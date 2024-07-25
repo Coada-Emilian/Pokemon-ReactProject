@@ -1,6 +1,8 @@
-import HeaderNavBarBrand from "./HeaderNavBarBrand/HeaderNavBarBrand";
-import HeaderNavBarMenu from "./HeaderNavBarMenu/HeaderNavBarMenu";
-import HeaderNavSearchBar from "./HeaderNavSearchBar/HeaderNavSearchBar";
+import React from 'react';
+
+import HeaderNavBarBrand from './HeaderNavBarBrand/HeaderNavBarBrand';
+import HeaderNavBarMenu from './HeaderNavBarMenu/HeaderNavBarMenu';
+import HeaderNavSearchBar from './HeaderNavSearchBar/HeaderNavSearchBar';
 
 export default function HeaderNavBar() {
   return (

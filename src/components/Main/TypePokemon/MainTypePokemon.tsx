@@ -1,11 +1,12 @@
-import { SetStateAction, useEffect, useState } from "react";
-import { IPokemon, IType } from "../../../@types/types";
-import PokemonArticle from "../Templates/PokemonArticle";
-import TypeArticle from "../Templates/TypeArticle";
-import "../Main.scss";
+/* eslint-disable @typescript-eslint/no-shadow */
+import React, { useEffect, useState } from 'react';
 
-// import { Result } from "../../@types/pokemonApi";
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
+
+import { IPokemon, IType } from '../../../@types/types';
+import PokemonArticle from '../Templates/PokemonArticle';
+import TypeArticle from '../Templates/TypeArticle';
+import '../Main.scss';
 
 interface MainTypePokemonProps {
   pokemons: IPokemon[];
@@ -20,11 +21,8 @@ export default function MainTypePokemon({
   const [foundPokemon, setFoundPokemon] = useState<IPokemon[]>([]);
 
   const params = useParams();
-  const typeName = params.typeName;
+  const { typeName } = params;
   useEffect(() => {
-    // if (foundPokemon.length > 0) {
-    //   console.log(foundPokemon);
-    // }
     const findPokemonByType = (typeName: string | undefined) => {
       const foundPokemons = pokemons.filter((pokemon) =>
         pokemon.types.some((type) => type.name === typeName)
@@ -32,7 +30,7 @@ export default function MainTypePokemon({
       setFoundPokemon(foundPokemons);
     };
     findPokemonByType(typeName);
-  }, []);
+  }, [pokemons, typeName]);
   return (
     <main className="container">
       <div className="types-container" id="types-container">

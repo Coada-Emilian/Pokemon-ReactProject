@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
-import { IType } from "../../../@types/types";
+import React from 'react';
 
-import logo from "../../../assets/icons/pokemon-type-svg-icons-master/icons/Acier.svg";
+import { Link } from 'react-router-dom';
+import { IType } from '../../../@types/types';
+
+import logo from '../../../assets/icons/pokemon-type-svg-icons-master/icons/Acier.svg';
 
 interface TypesProps {
   type: IType;

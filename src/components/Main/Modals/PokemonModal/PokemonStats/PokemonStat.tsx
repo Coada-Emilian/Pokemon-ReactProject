@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface StatProps {
   stat: number;
   title: string;
@@ -13,7 +15,7 @@ export default function PokemonStat({ stat, title }: StatProps) {
           value={stat}
           max="100"
           slot="modal-stat"
-        ></progress>
+        />
         <span className="stats_paragraph" slot="hp_value">
           {stat}%
         </span>

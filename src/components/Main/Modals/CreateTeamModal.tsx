@@ -1,7 +1,11 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 export default function CreateTeamModal() {
   return (
     <div className="modal" id="createTeam-modal">
-      <div className="modal-background" slot="createTeam_background"></div>
+      <div className="modal-background" slot="createTeam_background" />
       <div className="modal-content" id="createTeam-modal-content">
         <div className="modal-card">
           <form slot="createTeam_modal_form">
@@ -11,7 +15,8 @@ export default function CreateTeamModal() {
                 className="delete close"
                 type="button"
                 slot="createTeam_modal_button"
-              ></button>
+                aria-label="Close modal"
+              />
             </div>
 
             <div className="modal-card-body">
@@ -41,12 +46,13 @@ export default function CreateTeamModal() {
             </div>
 
             <div className="modal-card-foot">
-              <button
+              <Link
+                to="*"
                 className="button is-success"
                 slot="createTeam_createButton"
               >
                 Créer
-              </button>
+              </Link>
               <button
                 className="button close"
                 aria-label="close"

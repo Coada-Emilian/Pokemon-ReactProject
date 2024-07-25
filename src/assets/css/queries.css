@@ -1,164 +1,161 @@
 /* next breakpoint:450px */
 
-@media (min-width:450px) {
-    html {
-        font-size: 17px;
-    }
+@media (min-width: 450px) {
+  html {
+    font-size: 17px;
+  }
 }
 
 /* next breakpoint:600px */
 
-@media (min-width:600px) {
-    html {
-        font-size: 18px;
-    }
+@media (min-width: 600px) {
+  html {
+    font-size: 18px;
+  }
 }
 
 /* next breakpoint:750px */
 
-@media (min-width:750px) {
-    html{
-        font-size: 20px;
-    }
-    main{
-        flex-direction: row;
-    }
-    .pokemon_article{
-        width:45%;
-    }
-    
+@media (min-width: 750px) {
+  html {
+    font-size: 20px;
+  }
+  main {
+    flex-direction: row;
+  }
+  .pokemon_article {
+    width: 45%;
+  }
 }
 
 /* next breakpoint:900px */
 
-@media (min-width:900px) {
-    html{
-        font-size: 22px;
-    }
+@media (min-width: 900px) {
+  html {
+    font-size: 22px;
+  }
 }
 
 /* next breakpoint:1050px */
 
-@media (min-width:1050px) {
-    html{
-        font-size: 24px;
-    }
+@media (min-width: 1050px) {
+  html {
+    font-size: 24px;
+  }
 }
 
 /* next breakpoint:1200px */
 
-@media (min-width:1200px) {
-    html{
-        font-size: 16px;
-    }
-    main{
-        height:fit-content;
-        min-height: 100vh;
-        
-    }
-    .pokemon_article {
-        width:20%;
-    }
-    .team_article {
-        width:50%;
-    }
-    
+@media (min-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+  main {
+    height: fit-content;
+    min-height: 100vh;
+  }
+  .pokemon_article {
+    width: 20%;
+  }
+  .team_article {
+    width: 50%;
+  }
 }
 
 /* next breakpoint:1320px */
 
-@media (min-width:1320px) {
-    html{
-        font-size: 17px;
-    }
+@media (min-width: 1320px) {
+  html {
+    font-size: 17px;
+  }
 }
 
 /* next breakpoint:1440px */
 
-@media (min-width:1440px) {
-    html{
-        font-size: 18px;
-    }
+@media (min-width: 1440px) {
+  html {
+    font-size: 18px;
+  }
 }
 
 /* next breakpoint:1560px */
-@media (min-width:1560px) {
-    html{
-        font-size: 19px;
-    }
+@media (min-width: 1560px) {
+  html {
+    font-size: 19px;
+  }
 }
 
 /* next breakpoint:1680px */
 
-@media (min-width:1680px) {
-    html{
-        font-size: 20px;
-    }
+@media (min-width: 1680px) {
+  html {
+    font-size: 20px;
+  }
 }
 
 /* next breakpoint:1920px */
 
-@media (min-width:1920px) {
-    html{
-        font-size: 22px;
-    }
-    .card{
-        justify-content: center;
-        height:95%
-    }
-    .card_title{
-        font-size: 0.8rem;
-    }
-    .pokemon_article {
-        width:15%;
-    }
+@media (min-width: 1920px) {
+  html {
+    font-size: 22px;
+  }
+  .card {
+    justify-content: center;
+    height: 95%;
+  }
+  .card_title {
+    font-size: 0.8rem;
+  }
+  .pokemon_article {
+    width: 15%;
+  }
 }
 
 /* next breakpoint:2135px */
-@media (min-width:2135px) {
-    html{
-        font-size: 25px;
-    }
+@media (min-width: 2135px) {
+  html {
+    font-size: 25px;
+  }
 }
 
 /* next breakpoint:2347px */
-@media (min-width:2347px) {
-    html{
-        font-size: 28px;
-    }
+@media (min-width: 2347px) {
+  html {
+    font-size: 28px;
+  }
 }
 
 /* next breakpoint:2561px */
-@media (min-width:2347px) {
-    html{
-        font-size: 32px;
-    }
+@media (min-width: 2347px) {
+  html {
+    font-size: 32px;
+  }
 }
 
 /* next breakpoint:2881px */
-@media (min-width:2881px) {
-    html{
-        font-size: 35px;
-    }
+@media (min-width: 2881px) {
+  html {
+    font-size: 35px;
+  }
 }
 
 /* next breakpoint:3201px */
-@media (min-width:3201px) {
-    html{
-        font-size: 38px;
-    }
+@media (min-width: 3201px) {
+  html {
+    font-size: 38px;
+  }
 }
 
 /* next breakpoint:3521px */
-@media (min-width:3521px) {
-    html{
-        font-size: 42px;
-    }
+@media (min-width: 3521px) {
+  html {
+    font-size: 42px;
+  }
 }
 
 /* next breakpoint:3840px */
-@media (min-width:3840px) {
-    html{
-        font-size: 46px;
-    }
+@media (min-width: 3840px) {
+  html {
+    font-size: 46px;
+  }
 }

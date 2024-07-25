@@ -1,19 +1,20 @@
-import { useEffect, useState } from "react";
+/* eslint-disable no-param-reassign */
+import React, { useEffect, useState } from 'react';
 
-import getAllPokemon from "./Api/getAllPokemon";
+import { Route, Routes } from 'react-router-dom';
+import getAllPokemon from './Api/getAllPokemon';
 
-import Header from "./Header/Header";
-import Main from "./Main/Main";
+import Header from './Header/Header';
+import Main from './Main/Main';
 
-import getAllTypes from "./Api/getAllTypes";
+import getAllTypes from './Api/getAllTypes';
 
 // import getAllPokemonApi from "./Api/getAllPokemonApi";
 // import { IPokemonAPI } from "../@types/pokemonApi";
 // import getApiPokemonDetails from "./Api/getApiPokemonDetails";
 
-import { IPokemon } from "../@types/types";
-import { Route, Routes } from "react-router-dom";
-import MainTypePokemon from "./Main/TypePokemon/MainTypePokemon";
+import { IPokemon } from '../@types/types';
+import MainTypePokemon from './Main/TypePokemon/MainTypePokemon';
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -40,7 +41,7 @@ function App() {
       if (data) {
         setPokemonData(data);
       } else {
-        console.log("Failed to fetch Pokemon data");
+        console.log('Failed to fetch Pokemon data');
       }
     };
     fetchPokemonData();
@@ -95,7 +96,7 @@ function App() {
       if (data) {
         setTypesData(data);
       } else {
-        console.log("Failed to fetch Types data");
+        console.log('Failed to fetch Types data');
       }
     };
     fetchTypesData();
@@ -112,6 +113,7 @@ function App() {
           path="/pokemonsOfType/:typeName"
           element={<MainTypePokemon pokemons={pokemons} types={types} />}
         />
+        <Route path="*" element={<h1>Y U Here?</h1>} />
       </Routes>
     </>
   );

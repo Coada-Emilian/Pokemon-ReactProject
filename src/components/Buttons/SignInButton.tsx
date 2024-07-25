@@ -1,7 +1,10 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 export default function SignInButton() {
   return (
-    <a className="button is-light" slot="hamburger-login_btn">
+    <Link to="*" className="button is-light" slot="hamburger-login_btn">
       Se connecter
-    </a>
+    </Link>
   );
 }

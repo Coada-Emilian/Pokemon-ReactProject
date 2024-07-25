@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function TeamArticle() {
   return (
     <div className="card pokemon-icon" slot="pokemon_id">

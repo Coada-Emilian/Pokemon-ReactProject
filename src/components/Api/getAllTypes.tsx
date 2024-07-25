@@ -1,7 +1,7 @@
-import axios from "axios";
-import apiBaseUrl from "./config";
+import axios from 'axios';
+import apiBaseUrl from './config';
 
-//Fetching all types
+// Fetching all types
 export default async function getAllTypes() {
   try {
     const response = await axios.get(`${apiBaseUrl}/types`);
@@ -14,7 +14,7 @@ export default async function getAllTypes() {
     const foundTypes = response.data;
 
     if (!foundTypes) {
-      console.log("error");
+      console.log('error');
       return null;
     }
 

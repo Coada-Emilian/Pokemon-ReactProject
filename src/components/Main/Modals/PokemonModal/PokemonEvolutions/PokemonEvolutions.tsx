@@ -1,37 +1,35 @@
-import { useEffect, useState } from "react";
-import { IPokemon } from "../../../../../@types/types";
-import PokemonEvolutionFigure from "./EvolutionFigures/PokemonEvolutionFigure";
-import PokemonEvolutionIcon from "./EvolutionFigures/PokemonEvolutionIcon";
-import getPokemonById from "../../../../Api/getPokemonById";
+import React, { useEffect, useState } from 'react';
 
-import "./PokemonEvolutions.scss";
+import { IPokemon } from '../../../../../@types/types';
+
+import PokemonEvolutionFigure from './EvolutionFigures/PokemonEvolutionFigure';
+import PokemonEvolutionIcon from './EvolutionFigures/PokemonEvolutionIcon';
+import getPokemonById from '../../../../Api/getPokemonById';
+
+import './PokemonEvolutions.scss';
 
 interface PokemonProps {
   pokemon: IPokemon;
 }
 
 export default function PokemonEvolutions({ pokemon }: PokemonProps) {
-  const [isDevolution, setIsDevolution] = useState(false);
-  const [isEvolution, setIsEvolution] = useState(false);
   const [devolvedPokemon, setDevolvedPokemon] = useState<IPokemon>();
   const [evolvedPokemon, setEvolvedPokemon] = useState<IPokemon>();
 
   useEffect(() => {
     const fetchEvolutions = async () => {
       if (pokemon.devolution_id) {
-        setIsDevolution(true);
         const devolvedPokemonData = await getPokemonById(pokemon.devolution_id);
         setDevolvedPokemon(devolvedPokemonData);
       }
       if (pokemon.evolution_id) {
-        setIsEvolution(true);
         const evolvedPokemonData = await getPokemonById(pokemon.evolution_id);
         setEvolvedPokemon(evolvedPokemonData);
       }
     };
 
     fetchEvolutions();
-  }, []);
+  }, [pokemon.devolution_id, pokemon.evolution_id]);
   return (
     <div className="pokemonModal-evolutions">
       <div className="pokemonModal-evolutions-title">

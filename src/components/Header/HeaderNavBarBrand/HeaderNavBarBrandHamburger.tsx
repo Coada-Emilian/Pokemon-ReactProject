@@ -1,6 +1,11 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 export default function HeaderNavBarBrandHamburger() {
   return (
-    <a
+    // eslint-disable-next-line jsx-a11y/anchor-is-valid
+    <Link
+      to="#"
       role="button"
       className="navbar-burger hamburger-element"
       aria-label="menu"
@@ -8,9 +13,9 @@ export default function HeaderNavBarBrandHamburger() {
       data-target="navbarBasicExample"
       slot="navBar_hamburger_element"
     >
-      <span aria-hidden="true" className="hamburger-span"></span>
-      <span aria-hidden="true" className="hamburger-span"></span>
-      <span aria-hidden="true" className="hamburger-span"></span>
-    </a>
+      <span aria-hidden="true" className="hamburger-span" />
+      <span aria-hidden="true" className="hamburger-span" />
+      <span aria-hidden="true" className="hamburger-span" />
+    </Link>
   );
 }

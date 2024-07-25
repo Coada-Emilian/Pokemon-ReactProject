@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 
-//fetch pokemon details from api
+// fetch pokemon details from api
 export default async function getApiPokemonDetails(url: string) {
   try {
     const response = await axios.get(url);
@@ -10,10 +10,10 @@ export default async function getApiPokemonDetails(url: string) {
       return null;
     }
 
-    const data = response.data;
+    const { data } = response;
 
     if (!data) {
-      console.log("error");
+      console.log('error');
       return null;
     }
     return data;

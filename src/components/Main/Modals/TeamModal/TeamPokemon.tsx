@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function TeamPokemon() {
   return (
     <div className="card pokemon__small-image" slot="pokemon-id">

@@ -1,10 +1,15 @@
-import { IPokemon } from "../../../../@types/types";
-import PokemonEvolutions from "./PokemonEvolutions/PokemonEvolutions";
-import PokemonStats from "./PokemonStats/PokemonStats";
-import PokemonTypes from "./PokemonTypes/PokemonTypes";
-import image from "../../../../assets/img/1.webp";
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React from 'react';
 
-import "./PokemonModal.scss";
+import { Link } from 'react-router-dom';
+
+import { IPokemon } from '../../../../@types/types';
+import PokemonEvolutions from './PokemonEvolutions/PokemonEvolutions';
+import PokemonStats from './PokemonStats/PokemonStats';
+import PokemonTypes from './PokemonTypes/PokemonTypes';
+
+import './PokemonModal.scss';
 
 interface PokemonModalProps {
   pokemon: IPokemon;
@@ -15,7 +20,6 @@ export default function PokemonModal({
   pokemon,
   setIsModalOn,
 }: PokemonModalProps) {
-  const imageSource = `${image.slice(0, 16)}${pokemon.id}.webp`;
   const altText = `${pokemon.name} image`;
   return (
     <div className="modal is-active pokemon-modal" id="pokemon-modal">
@@ -25,9 +29,10 @@ export default function PokemonModal({
         onClick={() => {
           setIsModalOn(false);
         }}
-      ></div>
+        aria-label="Close modal"
+      />
       <div className="modal-card">
-        <div className="modal-background has-background-dark"></div>
+        <div className="modal-background has-background-dark" />
         <div className="modal-content">
           <div className="modal-title">
             <p className="title modal-subtitle" slot="modal_title">
@@ -40,7 +45,8 @@ export default function PokemonModal({
               onClick={() => {
                 setIsModalOn(false);
               }}
-            ></button>
+              aria-label="Close modal"
+            />
           </div>
 
           <div className="pokemonModal-description">
@@ -64,18 +70,19 @@ export default function PokemonModal({
 
           <div className="pokemonModal-stats-types">
             <PokemonStats pokemon={pokemon} />
-            <PokemonTypes types={pokemon.types} />
+            <PokemonTypes types={pokemon.types} setIsModalOn={setIsModalOn} />
           </div>
 
           <PokemonEvolutions pokemon={pokemon} />
 
           <footer className="card-footer">
-            <button
+            <Link
+              to="*"
               className="button is-light"
               slot="pokemonModal_compare_button"
             >
               Comparer
-            </button>
+            </Link>
           </footer>
         </div>
       </div>

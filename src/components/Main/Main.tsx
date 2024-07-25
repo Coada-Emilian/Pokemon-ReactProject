@@ -1,9 +1,10 @@
-import { IPokemon, IType } from "../../@types/types";
-import PokemonArticle from "./Templates/PokemonArticle";
-import TypeArticle from "./Templates/TypeArticle";
+import React from 'react';
 
-import "./Main.scss";
-import { Result } from "../../@types/pokemonApi";
+import { IPokemon, IType } from '../../@types/types';
+import PokemonArticle from './Templates/PokemonArticle';
+import TypeArticle from './Templates/TypeArticle';
+
+import './Main.scss';
 
 interface MainProps {
   pokemons: IPokemon[];

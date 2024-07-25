@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
-import icon from "../../../assets/icons/pokedex.png";
+/* eslint-disable react/no-unescaped-entities */
+import React from 'react';
+import { Link } from 'react-router-dom';
+import icon from '../../../assets/icons/pokedex.png';
 
 export default function HeaderNavBarBrandIcon() {
   return (

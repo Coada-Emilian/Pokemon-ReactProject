@@ -1,4 +1,6 @@
-import HeaderNavBarMenuEndItem1 from "./HeaderNavBarMenuEndItem1";
+import React from 'react';
+
+import HeaderNavBarMenuEndItem1 from './HeaderNavBarMenuEndItem1';
 
 export default function HeaderNavBarMenuEnd() {
   return (

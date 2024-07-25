@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react";
-import { IPokemon } from "../../../@types/types";
-import image from "../../../assets/img/1.webp";
-import PokemonModal from "../Modals/PokemonModal/PokemonModal";
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useState } from 'react';
+
+import { Link } from 'react-router-dom';
+import { IPokemon } from '../../../@types/types';
+import image from '../../../assets/img/1.webp';
+import PokemonModal from '../Modals/PokemonModal/PokemonModal';
 
 interface PokemonProps {
   pokemon: IPokemon;
@@ -14,8 +18,8 @@ export default function PokemonArticle({ pokemon }: PokemonProps) {
 
   return (
     <article className="pokemon-article">
-      <a
-        href="#"
+      <Link
+        to="#"
         className="pokemon-card-anchor"
         onClick={() => {
           setIsModalOn(true);
@@ -49,12 +53,14 @@ export default function PokemonArticle({ pokemon }: PokemonProps) {
 
             <footer className="card-footer">
               <button
+                type="button"
                 className="add-button button is-light"
                 slot="pokemonArticle_addButton"
               >
                 Ajouter à l'équipe
               </button>
               <button
+                type="button"
                 className="remove-button button is-dark"
                 slot="pokemonArticle_removeButton"
               >
@@ -63,7 +69,7 @@ export default function PokemonArticle({ pokemon }: PokemonProps) {
             </footer>
           </div>
         </div>
-      </a>
+      </Link>
       {isModalOn && (
         <PokemonModal pokemon={pokemon} setIsModalOn={setIsModalOn} />
       )}

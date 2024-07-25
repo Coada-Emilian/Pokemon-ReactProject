@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function TeamArticle() {
   return (
     <article className="team-article" slot="team_article">
@@ -23,7 +25,7 @@ export default function TeamArticle() {
           </div>
         </div>
 
-        <div id="team-pokemon" slot="team_pokemon"></div>
+        <div id="team-pokemon" slot="team_pokemon" />
       </div>
     </article>
   );

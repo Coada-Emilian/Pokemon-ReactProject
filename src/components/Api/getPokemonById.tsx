@@ -1,7 +1,7 @@
-import axios from "axios";
-import apiBaseUrl from "./config";
+import axios from 'axios';
+import apiBaseUrl from './config';
 
-//Fetching pokemon by id
+// Fetching pokemon by id
 export default async function getPokemonById(id: number) {
   try {
     const response = await axios.get(`${apiBaseUrl}/pokemon/${id}`);
@@ -9,7 +9,7 @@ export default async function getPokemonById(id: number) {
     const pokemon = response.data;
 
     if (!pokemon) {
-      console.log("error");
+      console.log('error');
       return null;
     }
 

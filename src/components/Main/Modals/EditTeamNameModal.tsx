@@ -1,7 +1,13 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React from 'react';
+
+import { Link } from 'react-router-dom';
+
 export default function EditTeamNameModal() {
   return (
     <div className="modal" id="editTeamName-modal">
-      <div className="modal-background" slot="editTeamName_background"></div>
+      <div className="modal-background" slot="editTeamName_background" />
       <div className="modal-content" id="editTeamName-modal-content">
         <div className="modal-card">
           <form slot="editTeamName_modal_form">
@@ -11,7 +17,8 @@ export default function EditTeamNameModal() {
                 className="delete close"
                 type="button"
                 slot="editTeamName_modal_button"
-              ></button>
+                aria-label="Close modal"
+              />
             </div>
 
             <div className="modal-card-body">
@@ -30,12 +37,13 @@ export default function EditTeamNameModal() {
             </div>
 
             <div className="modal-card-foot">
-              <button
+              <Link
+                to="*"
                 className="button is-success"
                 slot="editTeamName_createButton"
               >
                 Modifier
-              </button>
+              </Link>
               <button
                 className="button close"
                 aria-label="close"

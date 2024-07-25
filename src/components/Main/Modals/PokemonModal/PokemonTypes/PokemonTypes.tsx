@@ -1,15 +1,20 @@
-import { IType } from "../../../../../@types/types";
-import PokemonType from "./PokemonType";
+import React from 'react';
 
-import "./PokemonTypes.scss";
+import { IType } from '../../../../../@types/types';
+import PokemonType from './PokemonType';
+
+import './PokemonTypes.scss';
 
 interface TypeProps {
   types: IType[];
+  setIsModalOn: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function PokemonTypes({ types }: TypeProps) {
+export default function PokemonTypes({ types, setIsModalOn }: TypeProps) {
   const typesJSX = types.map((type) => {
-    return <PokemonType type={type} key={type.id} />;
+    return (
+      <PokemonType type={type} key={type.id} setIsModalOn={setIsModalOn} />
+    );
   });
   return (
     <div className="types">

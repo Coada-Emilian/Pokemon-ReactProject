@@ -1,5 +1,8 @@
-import { IPokemon } from "../../../../../../@types/types";
-import imgSource from "../../../../../../assets/img/1.webp";
+import React from 'react';
+
+import { IPokemon } from '../../../../../../@types/types';
+
+import imgSource from '../../../../../../assets/img/1.webp';
 
 interface PokemonEvolutionFigureProps {
   pokemon: IPokemon;
@@ -17,6 +20,7 @@ export default function PokemonEvolutionFigure({
           <img
             className="is-rounded figure_image"
             src={imageSource}
+            alt={pokemon.name}
             slot="pokemonModal_evolutions_pokemon_image"
           />
           <p

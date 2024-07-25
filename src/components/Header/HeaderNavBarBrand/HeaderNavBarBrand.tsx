@@ -1,5 +1,7 @@
-import HeaderNavBarBrandHamburger from "./HeaderNavBarBrandHamburger";
-import HeaderNavBarBrandIcon from "./HeaderNavBarBrandIcon";
+import React from 'react';
+
+import HeaderNavBarBrandHamburger from './HeaderNavBarBrandHamburger';
+import HeaderNavBarBrandIcon from './HeaderNavBarBrandIcon';
 
 export default function HeaderNavBar() {
   return (
