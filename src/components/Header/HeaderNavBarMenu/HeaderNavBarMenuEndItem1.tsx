@@ -7,7 +7,7 @@ import TeamButton from '../../Buttons/TeamButton';
 
 export default function HeaderNavBarMenuEndItem1() {
   return (
-    <div className="buttons">
+    <div className="navbar-buttons">
       <CreateTeamButton />
       <TeamButton />
       <SignUpButton />
