@@ -22,8 +22,8 @@ router.get("/teams", cw(teamsController.getAllTeams));
 router.post("/teams", cw(teamsController.createTeam));
 router.patch("/teams/:id", cw(teamsController.editTeamName));
 router.delete("/teams/:id", cw(teamsController.deleteTeamById));
-router.get("/teams/:id", cw(teamsController.getTeamById))
+router.get("/teams/:id", cw(teamsController.getTeamById));
 
 router.use((req, res) => {
-    res.status(404).json({ error: "Not Found" });
+  res.status(404).json({ error: "Not Found" });
 });

@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-param-reassign */
 import React, { useEffect, useState } from 'react';
 
@@ -14,10 +15,10 @@ import getAllTypes from './Api/getAllTypes';
 // import getApiPokemonDetails from "./Api/getApiPokemonDetails";
 
 import { IPokemon } from '../@types/types';
-import MainTypePokemon from './Main/TypePokemon/MainTypePokemon';
+import MainTypePokemon from './Main/TypePokemonPage/MainTypePokemon';
+import TeamPage from './Main/TeamPage/TeamPage';
 
 function App() {
-  const [pokemonData, setPokemonData] = useState([]);
   // const [pokemonApi, setPokemonApi] = useState<IPokemonAPI>({
   //   count: 0,
   //   next: "",
@@ -25,32 +26,17 @@ function App() {
   //   results: [],
   // });
 
-  useEffect(() => {
-    // const fetchPokemonDataFromApi = async () => {
-    //   const data = await getAllPokemonApi();
-    //   if (data) {
-    //     setPokemonApi(data);
-    //   } else {
-    //     console.log("Failed to fetch Pokemon data");
-    //   }
-    // };
-    // fetchPokemonDataFromApi();
-
-    const fetchPokemonData = async () => {
-      const data = await getAllPokemon();
-      if (data) {
-        setPokemonData(data);
-      } else {
-        console.log('Failed to fetch Pokemon data');
-      }
-    };
-    fetchPokemonData();
-  }, []);
-
-  const pokemons = [...pokemonData];
-  pokemons.forEach((pokemon: IPokemon) => {
-    pokemon.gif = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${pokemon.id}.gif`;
-  });
+  // useEffect(() => {
+  //   const fetchPokemonDataFromApi = async () => {
+  //     const data = await getAllPokemonApi();
+  //     if (data) {
+  //       setPokemonApi(data);
+  //     } else {
+  //       console.log("Failed to fetch Pokemon data");
+  //     }
+  //   };
+  //   fetchPokemonDataFromApi();
+  // }, []);
 
   // const pokemonsInApi = [...pokemonApi.results];
 
@@ -88,20 +74,39 @@ function App() {
   //   pokemon.types = data.types;
   //   pokemon.weight = data.weight;
   // });
-
+  const [pokemonData, setPokemonData] = useState([]);
   const [typesData, setTypesData] = useState([]);
   useEffect(() => {
-    const fetchTypesData = async () => {
-      const data = await getAllTypes();
-      if (data) {
-        setTypesData(data);
-      } else {
-        console.log('Failed to fetch Types data');
-      }
-    };
-    fetchTypesData();
+    try {
+      const fetchPokemonData = async () => {
+        const data = await getAllPokemon();
+        if (data) {
+          setPokemonData(data);
+        } else {
+          console.log('Failed to fetch Pokemon data');
+        }
+      };
+      fetchPokemonData();
+
+      const fetchTypesData = async () => {
+        const data = await getAllTypes();
+        if (data) {
+          setTypesData(data);
+        } else {
+          console.log('Failed to fetch Types data');
+        }
+      };
+      fetchTypesData();
+    } catch (error) {
+      console.error(error);
+      return undefined;
+    }
   }, []);
 
+  const pokemons = [...pokemonData];
+  pokemons.forEach((pokemon: IPokemon) => {
+    pokemon.gif = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${pokemon.id}.gif`;
+  });
   const types = [...typesData];
 
   return (
@@ -113,6 +118,7 @@ function App() {
           path="/pokemonsOfType/:typeName"
           element={<MainTypePokemon pokemons={pokemons} types={types} />}
         />
+        <Route path="/teams" element={<TeamPage />} />
         <Route path="*" element={<h1>Y U Here?</h1>} />
       </Routes>
     </>

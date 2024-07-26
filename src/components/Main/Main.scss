@@ -126,3 +126,6 @@ main {
 .pokemon-image {
   -webkit-filter: drop-shadow(5px 5px 5px v.$title-font);
 }
+.active {
+  display: none;
+}

@@ -1,0 +1,48 @@
+@use '../../../styles/mixins' as m;
+@use '../../../styles/variables' as v;
+
+main {
+  padding: 0 1rem;
+}
+
+.teams-container {
+  @include m.flexColumn;
+  width: 75%;
+  margin: 0 auto;
+  gap: 1rem;
+}
+.team-article {
+  margin: 0 auto;
+  width: 100%;
+  @include m.flexColumn;
+
+  background-color: v.$main-background;
+  border: 1px solid v.$title-font;
+  border-radius: 0.7rem;
+}
+.article-title-container {
+  margin: 1rem;
+  color: v.$title-font;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.team-trainer-container,
+.pokemon-paragraph {
+  margin: 0 1rem;
+  color: v.$title-font;
+}
+.article-image {
+  @include m.flexColumn;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.trainer-image {
+  width: 30%;
+}
+.teamPokemon-container {
+  margin: 1rem 1rem;
+  @include m.flexRow;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}

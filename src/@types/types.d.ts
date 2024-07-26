@@ -25,6 +25,7 @@ export interface ITeam {
   id: number;
   name: string;
   pokemon_has_team: IPokemonHasTeam;
+  pokemon?: IPokemon[];
 }
 
 export interface IPokemonHasTeam {

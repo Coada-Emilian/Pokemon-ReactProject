@@ -1,10 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-export default function TeamButton() {
+interface TeamButtonProps {
+  setIsCreateButtonShown: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function TeamButton({
+  setIsCreateButtonShown,
+}: TeamButtonProps) {
   return (
-    <Link to="*" className="button is-info" slot="hamburger-team_btn">
+    <NavLink
+      to="/teams"
+      className="button is-info"
+      slot="hamburger-team_btn"
+      onClick={() => {
+        setIsCreateButtonShown(true);
+      }}
+    >
       <strong>Équipes</strong>
-    </Link>
+    </NavLink>
   );
 }
