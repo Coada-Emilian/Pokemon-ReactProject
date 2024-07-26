@@ -45,4 +45,43 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.pokemon-figure {
+  margin-bottom: 3rem;
+}
+.pokemon-figure-paragraph {
+  color: v.$title-font;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .trainer-image {
+    max-width: 20%;
+  }
+}
+
+@media (min-width: 750px) {
+  .pokemon-article-image .pokemon-figure {
+    width: 3.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .teamPokemon-container {
+    margin-bottom: 3rem;
+  }
+}
+@media (min-width: 1680px) {
+  .teams-container {
+    width: 50%;
+  }
+  .pokemon-article-image .pokemon-figure {
+    width: 3rem;
+    margin-bottom: 2rem;
+  }
+  .teamPokemon-container {
+    margin-bottom: 1rem;
+  }
 }

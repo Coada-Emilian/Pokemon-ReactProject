@@ -13,13 +13,14 @@ export default function TeamPokemonArticle({
 
   return (
     <div className="pokemon-article-image">
-      <figure className="image is-64x64">
+      <figure className="image is-64x64 pokemon-figure">
         <img
           src={imageSource}
           alt={pokemon.name}
           slot="pokemon-image"
           className="pokemon-img"
         />
+        <p className="pokemon-figure-paragraph">{pokemon.name}</p>
       </figure>
     </div>
   );

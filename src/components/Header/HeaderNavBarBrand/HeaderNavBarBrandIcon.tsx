@@ -3,13 +3,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import icon from '../../../assets/icons/pokedex.png';
 
-export default function HeaderNavBarBrandIcon() {
+interface HeaderNavBarBrandIconProps {
+  setIsCreateButtonShown: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function HeaderNavBarBrandIcon({
+  setIsCreateButtonShown,
+}: HeaderNavBarBrandIconProps) {
   return (
     <Link
       className="navbar-item"
       to="/"
       slot="navBar_pokedex_anchor"
       id="navbar-pokedex"
+      onClick={() => {
+        setIsCreateButtonShown(false);
+      }}
     >
       <img src={icon} alt="pokedex icon" className="pokedex-icon" />
 
