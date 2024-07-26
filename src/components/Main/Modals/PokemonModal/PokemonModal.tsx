@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
@@ -75,7 +76,7 @@ export default function PokemonModal({
 
           <PokemonEvolutions pokemon={pokemon} />
 
-          <footer className="card-footer">
+          <footer className="pokemonModal-footer">
             <Link
               to="*"
               className="button is-light"
@@ -83,6 +84,20 @@ export default function PokemonModal({
             >
               Comparer
             </Link>
+            <button
+              type="button"
+              className="button is-info pokemonModal-addButton"
+              slot="pokemonModal_addButton"
+            >
+              Ajouter à l'équipe
+            </button>
+            <button
+              type="button"
+              className="button is-danger pokemonModal-removeButton"
+              slot="pokemonModal_removeButton"
+            >
+              Retirer de l'équipe
+            </button>
           </footer>
         </div>
       </div>

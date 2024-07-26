@@ -33,6 +33,16 @@
   width: 50%;
   font-size: 0.8rem;
 }
+.pokemonModal-footer{
+  display: flex;
+  justify-content: center;
+  gap:0.1rem;
+  margin-bottom: 1rem;
+}
+
+.pokemonModal-footer button,.pokemonModal-footer .button{
+  font-size: 0.7rem;
+}
 
 @media (min-width: 1024px) {
   .image-container {
@@ -41,7 +51,7 @@
 }
 @media (min-width: 1200px) {
   .modal-card {
-    width: 70%;
+    width: 50%;
   }
   .modal-card .modal-content {
     width: 100%;

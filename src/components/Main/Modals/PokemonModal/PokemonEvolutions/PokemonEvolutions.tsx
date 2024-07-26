@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useEffect, useState } from 'react';
 
 import { IPokemon } from '../../../../../@types/types';
@@ -15,6 +16,7 @@ interface PokemonProps {
 export default function PokemonEvolutions({ pokemon }: PokemonProps) {
   const [devolvedPokemon, setDevolvedPokemon] = useState<IPokemon>();
   const [evolvedPokemon, setEvolvedPokemon] = useState<IPokemon>();
+  const [evolution, setEvolution] = useState(true);
 
   useEffect(() => {
     const fetchEvolutions = async () => {
@@ -26,6 +28,10 @@ export default function PokemonEvolutions({ pokemon }: PokemonProps) {
         const evolvedPokemonData = await getPokemonById(pokemon.evolution_id);
         setEvolvedPokemon(evolvedPokemonData);
       }
+      if (!pokemon.evolution_id && !pokemon.devolution_id) {
+        console.log('no evolution');
+        setEvolution(false);
+      }
     };
 
     fetchEvolutions();
@@ -35,7 +41,11 @@ export default function PokemonEvolutions({ pokemon }: PokemonProps) {
       <div className="pokemonModal-evolutions-title">
         <p className="pokemonModal-evolutions-paragraph">Evolutions</p>
       </div>
-
+      {!evolution && (
+        <div className="evolution-message">
+          <p className="evolution-paragraph">Ce Pokemon n'a pas d'evolution</p>
+        </div>
+      )}
       <div className="pokemonModal-evolutions-figures">
         {devolvedPokemon && (
           <>
