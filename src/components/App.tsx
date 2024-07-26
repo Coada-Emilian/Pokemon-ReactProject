@@ -17,6 +17,7 @@ import getAllTypes from './Api/getAllTypes';
 import { IPokemon } from '../@types/types';
 import MainTypePokemon from './Main/TypePokemonPage/MainTypePokemon';
 import TeamPage from './Main/TeamPage/TeamPage';
+import ComparePage from './Main/ComparePage/ComparePage';
 
 function App() {
   // const [pokemonApi, setPokemonApi] = useState<IPokemonAPI>({
@@ -119,6 +120,10 @@ function App() {
           element={<MainTypePokemon pokemons={pokemons} types={types} />}
         />
         <Route path="/teams" element={<TeamPage />} />
+        <Route
+          path="/compare/:id"
+          element={<ComparePage pokemons={pokemons} types={types} />}
+        />
         <Route path="*" element={<h1>Y U Here?</h1>} />
       </Routes>
     </>

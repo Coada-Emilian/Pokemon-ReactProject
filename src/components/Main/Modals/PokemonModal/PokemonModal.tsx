@@ -78,7 +78,7 @@ export default function PokemonModal({
 
           <footer className="pokemonModal-footer">
             <Link
-              to="*"
+              to={`/compare/${pokemon.id}`}
               className="button is-light"
               slot="pokemonModal_compare_button"
             >

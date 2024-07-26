@@ -14,7 +14,6 @@ export default function HeaderNavBarMenuEndItem1({
   isCreateButtonShown,
   setIsCreateButtonShown,
 }: HeaderNavBarMenuEndItem1Props) {
-  console.log(isCreateButtonShown);
   return (
     <div className="navbar-buttons">
       {isCreateButtonShown && (
