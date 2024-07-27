@@ -11,7 +11,7 @@ export default function PokemonStat({ stat, title }: StatProps) {
       <p className="pokemonModal-stats-paragraph"> {title}</p>
       <div className="pokemonModal-progressBar">
         <progress
-          className="progress is-small is-info"
+          className="progress is-small is-info stat-progress"
           value={stat}
           max="100"
           slot="modal-stat"

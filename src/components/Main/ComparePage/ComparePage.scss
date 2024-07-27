@@ -1,0 +1,77 @@
+@use '../../../styles/mixins' as m;
+@use '../../../styles/variables' as v;
+
+.compare-container {
+  @include m.flexRow;
+  padding: 1rem;
+  gap: 1rem;
+}
+.pokemonToCompare-container {
+  width: 50%;
+  border: 1px solid v.$title-font;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  height: fit-content;
+}
+.pokemon-list {
+  width: 50%;
+  @include m.flexRow;
+  flex-wrap: wrap;
+}
+.pokemonToCompare-subtitle {
+  color: v.$title-font;
+}
+.pokemonToCompareimage-container {
+  width: 50%;
+  margin: 0 auto;
+}
+.pokemonToCompare-description {
+  display: none;
+}
+.pokemonToCompare-stats progress {
+  display: none;
+}
+.pokemonToCompare-stats .pokemonModal-stats .pokemon-stat {
+  @include m.flexRow;
+  justify-content: space-between;
+  font-size: 0.7rem;
+}
+
+.types-paragraph {
+  color: v.$title-font;
+}
+.pokemonToCompare-types {
+  @include m.flexRow;
+  margin-bottom: 0.5rem;
+}
+.pokemonToCompare-types .type-article a {
+  display: block;
+  width: 200%;
+  color: v.$title-font;
+  font-size: 0.5rem;
+}
+.pokemonToCompare-evolution-container {
+  display: none;
+}
+
+.pokemonToCompare-footer {
+  text-align: center;
+}
+.pokemonToCompare-footer button {
+  font-size: 0.5rem;
+}
+
+.small-compare-article {
+  width: 25%;
+  height: fit-content;
+  cursor: pointer;
+}
+.small-compare-article .pokemon-article-image figure {
+  width: 100%;
+  font-size: 0.5rem;
+  height: fit-content;
+  margin-bottom: 0;
+}
+.small-compare-article p {
+  font-size: 0.4rem;
+}

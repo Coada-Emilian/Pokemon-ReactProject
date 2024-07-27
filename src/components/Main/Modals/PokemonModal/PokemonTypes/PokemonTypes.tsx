@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import React from 'react';
 
 import { IType } from '../../../../../@types/types';
@@ -7,7 +8,7 @@ import './PokemonTypes.scss';
 
 interface TypeProps {
   types: IType[];
-  setIsModalOn: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsModalOn?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function PokemonTypes({ types, setIsModalOn }: TypeProps) {
