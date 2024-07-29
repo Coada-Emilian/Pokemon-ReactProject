@@ -13,7 +13,10 @@ export default function HeaderNavBar() {
       role="navigation"
       aria-label="main navigation"
     >
-      <HeaderNavBarBrand setIsCreateButtonShown={setIsCreateButtonShown} />
+      <HeaderNavBarBrand
+        isCreateButtonShown={isCreateButtonShown}
+        setIsCreateButtonShown={setIsCreateButtonShown}
+      />
       <HeaderNavSearchBar />
       <HeaderNavBarMenu
         isCreateButtonShown={isCreateButtonShown}
