@@ -9,7 +9,7 @@ export default function PokemonStat({ stat, title }: StatProps) {
   return (
     <div className="pokemon-stat">
       <p className="pokemonModal-stats-paragraph"> {title}</p>
-      <div className="pokemonModal-progressBar">
+      <div className="pokemonModal-progressBar progressBar-container">
         <progress
           className="progress is-small is-info stat-progress"
           value={stat}

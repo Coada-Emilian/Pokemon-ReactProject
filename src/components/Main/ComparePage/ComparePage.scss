@@ -6,6 +6,11 @@
   padding: 1rem;
   gap: 1rem;
 }
+.compare-main {
+  @include m.flexColumn;
+  justify-content: center;
+  align-items: center;
+}
 .pokemonToCompare-container {
   width: 50%;
   border: 1px solid v.$title-font;
@@ -56,6 +61,9 @@
 
 .pokemonToCompare-footer {
   text-align: center;
+  @include m.flexRow;
+  justify-content: center;
+  gap: 0.5rem;
 }
 .pokemonToCompare-footer button {
   font-size: 0.5rem;
@@ -74,4 +82,30 @@
 }
 .small-compare-article p {
   font-size: 0.4rem;
+}
+
+@media (min-width: 900px) {
+  .pokemonToCompare-description-container {
+    @include m.flexRow;
+    font-size: 0.6rem;
+  }
+  .pokemonToCompare-evolution-container {
+    display: flex;
+  }
+  .pokemonToCompare-stats progress {
+    display: block;
+  }
+  .pokemonToCompare-description {
+    display: inline;
+    color: v.$title-font;
+  }
+  .progressBar-container {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pokemonToCompare-image {
+    width: 75%;
+  }
 }

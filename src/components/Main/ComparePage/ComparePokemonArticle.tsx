@@ -7,18 +7,18 @@ import PokemonStats from '../Modals/PokemonModal/PokemonStats/PokemonStats';
 import TypeArticle from '../Templates/TypeArticle';
 
 interface ComparePokemonArticleProps {
-  pokemon: IPokemon;
+  pokemon: IPokemon | undefined;
 }
 
 export default function ComparePokemonArticle({
   pokemon,
 }: ComparePokemonArticleProps) {
-  const pokemonImageSource = `${pokemonImage.slice(0, 16)}${pokemon.id}.webp`;
+  const pokemonImageSource = `${pokemonImage.slice(0, 16)}${pokemon?.id}.webp`;
   return (
     <div className="pokemonToCompare-container">
       <div className="pokemonToCompare-content">
         <div className="pokemonToCompare-title">
-          <p className=" pokemonToCompare-subtitle">{pokemon.name}</p>
+          <p className=" pokemonToCompare-subtitle">{pokemon?.name}</p>
         </div>
 
         <div className="pokemonToCompare-description-container">
@@ -26,7 +26,7 @@ export default function ComparePokemonArticle({
             <div className="pokemonToCompareimage-container">
               <img
                 src={pokemonImageSource}
-                alt={pokemon.name}
+                alt={pokemon?.name}
                 className="pokemonToCompare-image"
               />
             </div>
@@ -34,7 +34,7 @@ export default function ComparePokemonArticle({
 
           <div className="pokemonToCompare-description">
             <p className="pokemonToCompare-description-paragraph">
-              {pokemon.description}
+              {pokemon?.description}
             </p>
           </div>
         </div>
@@ -46,7 +46,7 @@ export default function ComparePokemonArticle({
           <div className="pokemonToCompare-types-container">
             <p className="types-paragraph">Types</p>
             <div className="pokemonToCompare-types">
-              {pokemon.types.map((type) => (
+              {pokemon?.types.map((type) => (
                 <TypeArticle type={type} key={type.id} />
               ))}
             </div>

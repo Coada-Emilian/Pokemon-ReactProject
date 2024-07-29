@@ -14,6 +14,7 @@ import TeamPokemonArticle from '../Templates/TeamPokemonArticle';
 import './ComparePage.scss';
 import TypeArticle from '../Templates/TypeArticle';
 import ComparePokemonArticle from './ComparePokemonArticle';
+import ReturnToPokedexButton from '../../Buttons/ReturnToPokedexButton';
 
 interface ComparePageProps {
   pokemons: IPokemon[];
@@ -43,34 +44,39 @@ export default function ComparePage({ pokemons }: ComparePageProps) {
     }
   }, [pokemons, pokemonId]);
   return (
-    <div className="compare-container">
-      {pokemonToCompare && <ComparePokemonArticle pokemon={pokemonToCompare} />}
-      {isPokemonChosen && comparedPokemonId ? (
-        <ComparePokemonArticle pokemon={chosenPokemon} />
-      ) : (
-        <div className="pokemon-list">
-          {pokemons.map((pokemon) => {
-            const chosenPokemonId = pokemon.id;
-            const foundChosenPokemon = pokemons.find(
-              (monster) => monster.id === chosenPokemonId
-            );
-            return (
-              <div className="small-compare-article" key={pokemon.name}>
-                <Link
-                  to="#"
-                  onClick={() => {
-                    setIsPokemonChosen(true);
-                    setComparedPokemonId(chosenPokemonId);
-                    setChosenPokemon(foundChosenPokemon);
-                  }}
-                >
-                  <TeamPokemonArticle pokemon={pokemon} key={pokemon.id} />
-                </Link>
-              </div>
-            );
-          })}
-        </div>
-      )}
+    <div className="compare-main">
+      <div className="compare-container">
+        {pokemonToCompare && (
+          <ComparePokemonArticle pokemon={pokemonToCompare} />
+        )}
+        {isPokemonChosen && comparedPokemonId ? (
+          <ComparePokemonArticle pokemon={chosenPokemon} />
+        ) : (
+          <div className="pokemon-list">
+            {pokemons.map((pokemon) => {
+              const chosenPokemonId = pokemon.id;
+              const foundChosenPokemon = pokemons.find(
+                (monster) => monster.id === chosenPokemonId
+              );
+              return (
+                <div className="small-compare-article" key={pokemon.name}>
+                  <Link
+                    to="#"
+                    onClick={() => {
+                      setIsPokemonChosen(true);
+                      setComparedPokemonId(chosenPokemonId);
+                      setChosenPokemon(foundChosenPokemon);
+                    }}
+                  >
+                    <TeamPokemonArticle pokemon={pokemon} key={pokemon.id} />
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+      <ReturnToPokedexButton />
     </div>
   );
 }
