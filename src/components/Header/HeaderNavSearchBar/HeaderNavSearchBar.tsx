@@ -1,18 +1,25 @@
 import React from 'react';
 
 import HeaderNavBarSearchForm from './HeaderNavBarSearchForm';
-import { IPokemon } from '../../../@types/types';
 
 interface HeaderNavSearchBarProps {
-  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+  setPokemonSearchValue: React.Dispatch<React.SetStateAction<string>>;
+  setTeamSearchValue: React.Dispatch<React.SetStateAction<string>>;
+  isCreateButtonShown: boolean;
 }
 
 export default function HeaderNavSearchBar({
-  setSearchValue,
+  setPokemonSearchValue,
+  setTeamSearchValue,
+  isCreateButtonShown,
 }: HeaderNavSearchBarProps) {
   return (
     <div className="search-bar">
-      <HeaderNavBarSearchForm setSearchValue={setSearchValue} />
+      <HeaderNavBarSearchForm
+        isCreateButtonShown={isCreateButtonShown}
+        setPokemonSearchValue={setPokemonSearchValue}
+        setTeamSearchValue={setTeamSearchValue}
+      />
     </div>
   );
 }

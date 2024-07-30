@@ -3,16 +3,22 @@ import React from 'react';
 import HeaderNavBar from './HeaderNavBar';
 
 import './Header.scss';
-import { IPokemon } from '../../@types/types';
 
 interface HeaderProps {
-  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+  setPokemonSearchValue: React.Dispatch<React.SetStateAction<string>>;
+  setTeamSearchValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default function Header({ setSearchValue }: HeaderProps) {
+export default function Header({
+  setPokemonSearchValue,
+  setTeamSearchValue,
+}: HeaderProps) {
   return (
     <header>
-      <HeaderNavBar setSearchValue={setSearchValue} />
+      <HeaderNavBar
+        setPokemonSearchValue={setPokemonSearchValue}
+        setTeamSearchValue={setTeamSearchValue}
+      />
     </header>
   );
 }

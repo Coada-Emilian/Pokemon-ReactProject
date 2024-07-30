@@ -3,13 +3,16 @@ import React, { useState } from 'react';
 import HeaderNavBarBrand from './HeaderNavBarBrand/HeaderNavBarBrand';
 import HeaderNavBarMenu from './HeaderNavBarMenu/HeaderNavBarMenu';
 import HeaderNavSearchBar from './HeaderNavSearchBar/HeaderNavSearchBar';
-import { IPokemon } from '../../@types/types';
 
 interface HeaderNavBarProps {
-  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+  setPokemonSearchValue: React.Dispatch<React.SetStateAction<string>>;
+  setTeamSearchValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default function HeaderNavBar({ setSearchValue }: HeaderNavBarProps) {
+export default function HeaderNavBar({
+  setPokemonSearchValue,
+  setTeamSearchValue,
+}: HeaderNavBarProps) {
   const [isCreateButtonShown, setIsCreateButtonShown] = useState(false);
   return (
     <nav
@@ -22,7 +25,11 @@ export default function HeaderNavBar({ setSearchValue }: HeaderNavBarProps) {
         isCreateButtonShown={isCreateButtonShown}
         setIsCreateButtonShown={setIsCreateButtonShown}
       />
-      <HeaderNavSearchBar setSearchValue={setSearchValue} />
+      <HeaderNavSearchBar
+        isCreateButtonShown={isCreateButtonShown}
+        setPokemonSearchValue={setPokemonSearchValue}
+        setTeamSearchValue={setTeamSearchValue}
+      />
       <HeaderNavBarMenu
         isCreateButtonShown={isCreateButtonShown}
         setIsCreateButtonShown={setIsCreateButtonShown}

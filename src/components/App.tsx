@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable consistent-return */
 /* eslint-disable no-param-reassign */
 import React, { useEffect, useState } from 'react';
@@ -14,10 +15,11 @@ import getAllTypes from './Api/Types/getAllTypes';
 // import { IPokemonAPI } from "../@types/pokemonApi";
 // import getApiPokemonDetails from "./Api/getApiPokemonDetails";
 
-import { IPokemon } from '../@types/types';
+import { IPokemon, ITeam } from '../@types/types';
 import MainTypePokemon from './Main/TypePokemonPage/MainTypePokemon';
 import TeamPage from './Main/TeamPage/TeamPage';
 import ComparePage from './Main/ComparePage/ComparePage';
+import getAllTeams from './Api/Teams/getAllTeams';
 
 function App() {
   // const [pokemonApi, setPokemonApi] = useState<IPokemonAPI>({
@@ -75,10 +77,16 @@ function App() {
   //   pokemon.types = data.types;
   //   pokemon.weight = data.weight;
   // });
-  const [searchValue, setSearchValue] = useState<string>('');
+
   const [pokemonData, setPokemonData] = useState([]);
   const [typesData, setTypesData] = useState([]);
+  const [teamData, setTeamData] = useState<ITeam[]>([]);
+
+  const [pokemonSearchValue, setPokemonSearchValue] = useState<string>('');
   const [foundPokemonArray, setFoundPokemonArray] = useState<IPokemon[]>([]);
+
+  const [teamSearchValue, setTeamSearchValue] = useState<string>('');
+  const [foundTeamArray, setFoundTeamArray] = useState<ITeam[]>([]);
 
   useEffect(() => {
     try {
@@ -101,27 +109,52 @@ function App() {
         }
       };
       fetchTypesData();
+
+      const fetchTeamData = async () => {
+        const data = await getAllTeams();
+        if (data) {
+          setTeamData(data);
+        } else {
+          console.log('Failed to fetch team data');
+        }
+      };
+      fetchTeamData();
     } catch (error) {
       console.error(error);
       return undefined;
     }
   }, []);
 
-  const pokemons = [...pokemonData];
+  const pokemons: IPokemon[] = [...pokemonData];
   pokemons.forEach((pokemon: IPokemon) => {
     pokemon.gif = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${pokemon.id}.gif`;
   });
   const types = [...typesData];
 
+  const teams = [...teamData];
+
   useEffect(() => {
-    const foundPokemon = pokemons.filter((pokemon) =>
-      pokemon.name.toLowerCase().includes(searchValue)
-    );
-    setFoundPokemonArray(foundPokemon);
-  }, [searchValue]);
+    try {
+      const foundPokemon = pokemons.filter((pokemon: IPokemon) =>
+        pokemon.name.toLowerCase().includes(pokemonSearchValue)
+      );
+      setFoundPokemonArray(foundPokemon);
+
+      const foundTeams = teams.filter((team: ITeam) =>
+        team.name.toLowerCase().includes(teamSearchValue)
+      );
+      setFoundTeamArray(foundTeams);
+    } catch (error) {
+      console.error(error);
+      return undefined;
+    }
+  }, [pokemonSearchValue, teamSearchValue, teams, pokemons]);
   return (
     <>
-      <Header setSearchValue={setSearchValue} />
+      <Header
+        setPokemonSearchValue={setPokemonSearchValue}
+        setTeamSearchValue={setTeamSearchValue}
+      />
       <Routes>
         <Route
           path="/"
@@ -137,7 +170,16 @@ function App() {
           path="/pokemonsOfType/:typeName"
           element={<MainTypePokemon pokemons={pokemons} types={types} />}
         />
-        <Route path="/teams" element={<TeamPage />} />
+        <Route
+          path="/teams"
+          element={
+            foundTeamArray.length > 0 ? (
+              <TeamPage teams={foundTeamArray} />
+            ) : (
+              <TeamPage teams={teams} />
+            )
+          }
+        />
         <Route
           path="/compare/:id"
           element={<ComparePage pokemons={pokemons} />}

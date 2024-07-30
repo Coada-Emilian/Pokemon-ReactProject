@@ -1,12 +1,17 @@
+/* eslint-disable no-lone-blocks */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React from 'react';
-import { IPokemon } from '../../../@types/types';
 
 interface HeaderNavBarSearchFormProps {
-  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+  setPokemonSearchValue: React.Dispatch<React.SetStateAction<string>>;
+  setTeamSearchValue: React.Dispatch<React.SetStateAction<string>>;
+  isCreateButtonShown: boolean;
 }
 
 export default function HeaderNavBarSearchForm({
-  setSearchValue,
+  isCreateButtonShown,
+  setPokemonSearchValue,
+  setTeamSearchValue,
 }: HeaderNavBarSearchFormProps) {
   return (
     <form action="#" className="search-form" slot="search-form">
@@ -14,10 +19,14 @@ export default function HeaderNavBarSearchForm({
         className="input search-input"
         name="term"
         type="text"
-        placeholder="Find a pokemon"
+        placeholder={isCreateButtonShown ? 'Find a team' : 'Find a pokemon'}
         onChange={(event) => {
           const value = event.currentTarget.value.toLowerCase();
-          setSearchValue(value);
+          {
+            isCreateButtonShown
+              ? setTeamSearchValue(value)
+              : setPokemonSearchValue(value);
+          }
         }}
       />
     </form>
