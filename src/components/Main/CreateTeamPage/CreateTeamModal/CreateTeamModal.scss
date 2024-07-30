@@ -1,0 +1,14 @@
+@use '../../../../styles/mixins' as m;
+@use '../../../../styles/variables' as v;
+
+.createTeam-main {
+  padding: 1.2rem;
+  @include m.flexColumn;
+  justify-content: space-between;
+  align-items: center;
+}
+.createTeam-container {
+  width: 75%;
+  // margin: 0 auto;
+  margin-bottom: 1rem;
+}

@@ -10,7 +10,7 @@ export default function CreateTeamButton({
 }: CreateTeamButtonProps) {
   return (
     <Link
-      to="*"
+      to="/create/team"
       className="button is-info"
       slot="hamburger-create_team_btn"
       onClick={() => {

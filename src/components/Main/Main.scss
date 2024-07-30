@@ -1,5 +1,5 @@
-@use "../../styles/mixins" as m;
-@use "../../styles/variables" as v;
+@use '../../styles/mixins' as m;
+@use '../../styles/variables' as v;
 
 @keyframes vibrate {
   0% {
@@ -86,14 +86,13 @@ main {
   border-radius: 0.7rem;
 }
 .type-icons {
-  width:100%;
+  width: 100%;
   display: flex;
-  gap:0.5rem;
-  margin:0.3rem 0;
-  
+  gap: 0.5rem;
+  margin: 0.3rem 0;
 }
-.type-icon{
-  width:15%;
+.type-icon {
+  width: 15%;
 }
 .pokemonArticle-figure {
   margin: 0 auto;
@@ -125,7 +124,4 @@ main {
 
 .pokemon-image {
   -webkit-filter: drop-shadow(5px 5px 5px v.$title-font);
-}
-.active {
-  display: none;
 }

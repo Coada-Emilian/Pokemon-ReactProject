@@ -16,10 +16,12 @@ export default function HeaderNavBarMenuEndItem1({
 }: HeaderNavBarMenuEndItem1Props) {
   return (
     <div className="navbar-buttons">
-      {isCreateButtonShown && (
+      {isCreateButtonShown ? (
         <CreateTeamButton setIsCreateButtonShown={setIsCreateButtonShown} />
+      ) : (
+        <TeamButton setIsCreateButtonShown={setIsCreateButtonShown} />
       )}
-      <TeamButton setIsCreateButtonShown={setIsCreateButtonShown} />
+
       <SignUpButton />
       <SignInButton />
     </div>

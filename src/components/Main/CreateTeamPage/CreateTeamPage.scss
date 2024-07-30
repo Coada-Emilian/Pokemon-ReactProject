@@ -1,0 +1,87 @@
+@use '../../../styles/mixins' as m;
+@use '../../../styles/variables' as v;
+
+@keyframes vibrate {
+  0% {
+    transform: translate(0);
+  }
+
+  10% {
+    transform: translate(-2px, -2px);
+  }
+
+  20% {
+    transform: translate(2px, -2px);
+  }
+
+  30% {
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    transform: translate(2px, 2px);
+  }
+
+  50% {
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    transform: translate(2px, -2px);
+  }
+
+  70% {
+    transform: translate(-2px, 2px);
+  }
+
+  80% {
+    transform: translate(-2px, -2px);
+  }
+
+  90% {
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+.createTeam-pokemonList {
+  @include m.flexRow;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 75%;
+  //   margin: 0 auto;
+}
+.createTeam-pokemonList .pokemon-article-image .pokemon-figure:hover {
+  animation: vibrate 3s ease 0s 1 normal forwards;
+}
+.createTeam-pokemonList .pokemon-article-image .pokemon-figure {
+  @include m.flexColumn;
+  align-items: center;
+  height: fit-content;
+  padding: 0.3rem;
+  font-size: 0.2rem;
+  border: 1px solid v.$title-font;
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+.createTeam-pokemonList
+  .pokemon-article-image
+  .pokemon-figure
+  .pokemon-figure-paragraph {
+  font-size: 0.5rem;
+}
+
+.createTeam-message {
+  color: v.$title-font;
+  margin-bottom: 0.3rem;
+}
+
+.chosen {
+  -webkit-filter: drop-shadow(1.5px 1.5px 1.5px v.$title-font);
+  transform: scale(1.2);
+}

@@ -21,6 +21,8 @@ import TeamPage from './Main/TeamPage/TeamPage';
 import ComparePage from './Main/ComparePage/ComparePage';
 import getAllTeams from './Api/Teams/getAllTeams';
 
+import CreateTeamPage from './Main/CreateTeamPage/CreateTeamPage';
+
 function App() {
   // const [pokemonApi, setPokemonApi] = useState<IPokemonAPI>({
   //   count: 0,
@@ -126,6 +128,7 @@ function App() {
   }, []);
 
   const pokemons: IPokemon[] = [...pokemonData];
+
   pokemons.forEach((pokemon: IPokemon) => {
     pokemon.gif = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${pokemon.id}.gif`;
   });
@@ -148,7 +151,7 @@ function App() {
       console.error(error);
       return undefined;
     }
-  }, [pokemonSearchValue, teamSearchValue, teams, pokemons]);
+  }, [pokemonSearchValue, teamSearchValue]);
   return (
     <>
       <Header
@@ -179,6 +182,10 @@ function App() {
               <TeamPage teams={teams} />
             )
           }
+        />
+        <Route
+          path="/create/team"
+          element={<CreateTeamPage pokemons={pokemons} />}
         />
         <Route
           path="/compare/:id"
