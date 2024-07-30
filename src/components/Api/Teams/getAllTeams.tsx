@@ -1,7 +1,7 @@
 // eslint-disable-next-line prettier/prettier
-import axios from "axios";
+import axios from 'axios';
 // eslint-disable-next-line prettier/prettier
-import apiBaseUrl from "./config";
+import apiBaseUrl from '../config';
 
 // Fetching all teams
 export default async function getAllTeams() {
@@ -16,7 +16,7 @@ export default async function getAllTeams() {
     const teams = response.data;
     if (!teams) {
       // eslint-disable-next-line prettier/prettier
-      console.log("error");
+      console.log('error');
       return null;
     }
     return teams;

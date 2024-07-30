@@ -3,8 +3,13 @@ import React, { useState } from 'react';
 import HeaderNavBarBrand from './HeaderNavBarBrand/HeaderNavBarBrand';
 import HeaderNavBarMenu from './HeaderNavBarMenu/HeaderNavBarMenu';
 import HeaderNavSearchBar from './HeaderNavSearchBar/HeaderNavSearchBar';
+import { IPokemon } from '../../@types/types';
 
-export default function HeaderNavBar() {
+interface HeaderNavBarProps {
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function HeaderNavBar({ setSearchValue }: HeaderNavBarProps) {
   const [isCreateButtonShown, setIsCreateButtonShown] = useState(false);
   return (
     <nav
@@ -17,7 +22,7 @@ export default function HeaderNavBar() {
         isCreateButtonShown={isCreateButtonShown}
         setIsCreateButtonShown={setIsCreateButtonShown}
       />
-      <HeaderNavSearchBar />
+      <HeaderNavSearchBar setSearchValue={setSearchValue} />
       <HeaderNavBarMenu
         isCreateButtonShown={isCreateButtonShown}
         setIsCreateButtonShown={setIsCreateButtonShown}

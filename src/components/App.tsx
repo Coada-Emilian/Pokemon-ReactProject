@@ -3,12 +3,12 @@
 import React, { useEffect, useState } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
-import getAllPokemon from './Api/getAllPokemon';
+import getAllPokemon from './Api/Pokemon/getAllPokemon';
 
 import Header from './Header/Header';
 import Main from './Main/Main';
 
-import getAllTypes from './Api/getAllTypes';
+import getAllTypes from './Api/Types/getAllTypes';
 
 // import getAllPokemonApi from "./Api/getAllPokemonApi";
 // import { IPokemonAPI } from "../@types/pokemonApi";
@@ -75,8 +75,11 @@ function App() {
   //   pokemon.types = data.types;
   //   pokemon.weight = data.weight;
   // });
+  const [searchValue, setSearchValue] = useState<string>('');
   const [pokemonData, setPokemonData] = useState([]);
   const [typesData, setTypesData] = useState([]);
+  const [foundPokemonArray, setFoundPokemonArray] = useState<IPokemon[]>([]);
+
   useEffect(() => {
     try {
       const fetchPokemonData = async () => {
@@ -110,11 +113,26 @@ function App() {
   });
   const types = [...typesData];
 
+  useEffect(() => {
+    const foundPokemon = pokemons.filter((pokemon) =>
+      pokemon.name.toLowerCase().includes(searchValue)
+    );
+    setFoundPokemonArray(foundPokemon);
+  }, [searchValue]);
   return (
     <>
-      <Header />
+      <Header setSearchValue={setSearchValue} />
       <Routes>
-        <Route path="/" element={<Main pokemons={pokemons} types={types} />} />
+        <Route
+          path="/"
+          element={
+            foundPokemonArray.length > 0 ? (
+              <Main pokemons={foundPokemonArray} types={types} />
+            ) : (
+              <Main pokemons={pokemons} types={types} />
+            )
+          }
+        />
         <Route
           path="/pokemonsOfType/:typeName"
           element={<MainTypePokemon pokemons={pokemons} types={types} />}
@@ -122,7 +140,7 @@ function App() {
         <Route path="/teams" element={<TeamPage />} />
         <Route
           path="/compare/:id"
-          element={<ComparePage pokemons={pokemons} types={types} />}
+          element={<ComparePage pokemons={pokemons} />}
         />
         <Route path="*" element={<h1>Y U Here?</h1>} />
       </Routes>

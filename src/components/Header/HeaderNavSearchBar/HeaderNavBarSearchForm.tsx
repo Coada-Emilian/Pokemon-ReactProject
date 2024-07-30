@@ -1,6 +1,13 @@
 import React from 'react';
+import { IPokemon } from '../../../@types/types';
 
-export default function HeaderNavBarSearchForm() {
+interface HeaderNavBarSearchFormProps {
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function HeaderNavBarSearchForm({
+  setSearchValue,
+}: HeaderNavBarSearchFormProps) {
   return (
     <form action="#" className="search-form" slot="search-form">
       <input
@@ -8,12 +15,11 @@ export default function HeaderNavBarSearchForm() {
         name="term"
         type="text"
         placeholder="Find a pokemon"
-        slot="search-input"
+        onChange={(event) => {
+          const value = event.currentTarget.value.toLowerCase();
+          setSearchValue(value);
+        }}
       />
-
-      <button type="submit" className="button is-info find-button">
-        Find Pokemon
-      </button>
     </form>
   );
 }

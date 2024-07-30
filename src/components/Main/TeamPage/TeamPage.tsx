@@ -2,7 +2,7 @@
 /* eslint-disable consistent-return */
 import { useEffect, useState } from 'react';
 import { ITeam } from '../../../@types/types';
-import getAllTeams from '../../Api/getAllTeams';
+import getAllTeams from '../../Api/Teams/getAllTeams';
 import TeamArticle from '../Templates/TeamArticle';
 
 import './TeamPage.scss';

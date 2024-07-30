@@ -1,3 +1,3 @@
-export function renderHomePage(req,res){
-    res.send("Hello")
+export function renderHomePage(req, res) {
+  res.send('Hello');
 }

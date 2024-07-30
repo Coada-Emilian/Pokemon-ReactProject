@@ -1,11 +1,18 @@
 import React from 'react';
 
 import HeaderNavBarSearchForm from './HeaderNavBarSearchForm';
+import { IPokemon } from '../../../@types/types';
 
-export default function HeaderNavSearchBar() {
+interface HeaderNavSearchBarProps {
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function HeaderNavSearchBar({
+  setSearchValue,
+}: HeaderNavSearchBarProps) {
   return (
     <div className="search-bar">
-      <HeaderNavBarSearchForm />
+      <HeaderNavBarSearchForm setSearchValue={setSearchValue} />
     </div>
   );
 }

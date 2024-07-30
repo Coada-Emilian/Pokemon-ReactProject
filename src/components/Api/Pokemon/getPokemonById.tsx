@@ -1,5 +1,5 @@
 import axios from 'axios';
-import apiBaseUrl from './config';
+import apiBaseUrl from '../config';
 
 // Fetching pokemon by id
 export default async function getPokemonById(id: number) {

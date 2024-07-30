@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import HeaderNavBar from './HeaderNavBar';
 
 import './Header.scss';
+import { IPokemon } from '../../@types/types';
 
-export default function Header() {
+interface HeaderProps {
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function Header({ setSearchValue }: HeaderProps) {
   return (
     <header>
-      <HeaderNavBar />
+      <HeaderNavBar setSearchValue={setSearchValue} />
     </header>
   );
 }
