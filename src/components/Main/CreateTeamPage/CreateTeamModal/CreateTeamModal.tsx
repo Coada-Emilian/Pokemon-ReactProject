@@ -3,11 +3,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './CreateTeamModal.scss';
+import { IPokemon } from '../../../../@types/types';
+import TeamPokemonArticle from '../../Templates/TeamPokemonArticle';
 
 interface CreateTeamModalProps {
   setArePokemonShown: React.Dispatch<React.SetStateAction<boolean>>;
+  chosenPokemon: IPokemon[];
 }
 export default function CreateTeamModal({
+  chosenPokemon,
   setArePokemonShown,
 }: CreateTeamModalProps) {
   return (
@@ -42,6 +46,18 @@ export default function CreateTeamModal({
               placeholder="Description"
               required
             />
+            {chosenPokemon.length > 0 && (
+              <div className="team-pokemon-container">
+                <p className="team-pokemon-paragraph">Pokemon dans l’équipe</p>
+                <div className="team-pokemon">
+                  {chosenPokemon.map((pokemon) => {
+                    return (
+                      <TeamPokemonArticle pokemon={pokemon} key={pokemon.id} />
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="modal-card-foot">
@@ -52,7 +68,7 @@ export default function CreateTeamModal({
                 setArePokemonShown(true);
               }}
             >
-              Créer
+              Ajouter Pokemon
             </Link>
             <button className="button close" aria-label="close" type="button">
               Annuler

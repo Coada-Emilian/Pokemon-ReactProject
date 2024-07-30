@@ -22,17 +22,23 @@ export default function CreateTeamPage({ pokemons }: CreateTeamPageProps) {
     if (chosenPokemon.length > 0) {
       setChosenPokemon([]);
     }
+    const newChosenPokemonArray: IPokemon[] = [];
     chosenPokemonArray.forEach((id) => {
       const foundChosenPokemon = pokemons.find((pokemon) => pokemon.id === id);
-
-      const newChosenPokemonArray = [...chosenPokemon, foundChosenPokemon];
-      setChosenPokemon(newChosenPokemonArray);
+      if (!foundChosenPokemon) {
+        console.log('Pokemon not found');
+      } else {
+        newChosenPokemonArray.push(foundChosenPokemon);
+      }
     });
+    setChosenPokemon(newChosenPokemonArray);
   }, [chosenPokemonArray]);
-  console.log(chosenPokemon);
   return (
     <div className="createTeam-main">
-      <CreateTeamModal setArePokemonShown={setArePokemonShown} />
+      <CreateTeamModal
+        setArePokemonShown={setArePokemonShown}
+        chosenPokemon={chosenPokemon}
+      />
       {arePokemonShown && (
         <>
           <p className="createTeam-message">Choisissez jusqu'à 6 Pokémon</p>
