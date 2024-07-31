@@ -78,10 +78,20 @@
 
 .createTeam-message {
   color: v.$title-font;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
 }
 
 .chosen {
   -webkit-filter: drop-shadow(1.5px 1.5px 1.5px v.$title-font);
   transform: scale(1.2);
+}
+
+.maximum {
+  -webkit-filter: drop-shadow(3px 3px 3px red);
+}
+
+.maximumPokemon-paragraph {
+  color: red;
+  margin-bottom: 1rem;
 }

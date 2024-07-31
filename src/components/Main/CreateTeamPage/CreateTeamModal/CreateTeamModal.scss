@@ -15,11 +15,17 @@
 
 .team-pokemon-paragraph {
   margin-bottom: 0.5em;
-  color: #363636;
+  color: v.$icon-font;
   display: block;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 .team-pokemon {
   @include m.flexRow;
+  gap: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.team-pokemon .pokemon-article-image .pokemon-figure .pokemon-figure-paragraph {
+  color: v.$icon-font;
 }
