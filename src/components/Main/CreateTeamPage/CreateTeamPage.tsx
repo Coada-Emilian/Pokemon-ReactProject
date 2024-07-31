@@ -11,6 +11,7 @@ import CreateTeamModal from './CreateTeamModal/CreateTeamModal';
 import './CreateTeamPage.scss';
 import { IPokemon } from '../../../@types/types';
 import TeamPokemonArticle from '../Templates/TeamPokemonArticle';
+import TrainerAvatarFigure from './TrainerAvatarFigure';
 
 interface CreateTeamPageProps {
   pokemons: IPokemon[];
@@ -22,6 +23,17 @@ export default function CreateTeamPage({ pokemons }: CreateTeamPageProps) {
   const [chosenPokemon, setChosenPokemon] = useState<IPokemon[]>([]);
   const [maximumPokemonMessage, setMaximumPokemonMessage] =
     useState<boolean>(false);
+  const [trainerImageIdArray, setTrainerImageIdArray] = useState<number[]>([
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+    22, 23, 24, 25,
+  ]);
+  const [areTrainerAvatarsShown, setAreTrainerAvatarsShown] =
+    useState<boolean>(false);
+  const [isAddPokemonButtonShown, setIsAddPokemonButtonShown] =
+    useState<boolean>(false);
+  const [chosenAvatarId, setChosenAvatarId] = useState<number | undefined>(
+    undefined
+  );
 
   useEffect(() => {
     if (chosenPokemon.length > 0) {
@@ -53,8 +65,31 @@ export default function CreateTeamPage({ pokemons }: CreateTeamPageProps) {
       <CreateTeamModal
         setArePokemonShown={setArePokemonShown}
         chosenPokemon={chosenPokemon}
+        setAreTrainerAvatarsShown={setAreTrainerAvatarsShown}
+        isAddPokemonButtonShown={isAddPokemonButtonShown}
+        chosenAvatarId={chosenAvatarId}
       />
-      {arePokemonShown && (
+
+      {areTrainerAvatarsShown && !isAddPokemonButtonShown && (
+        <>
+          <p className="trainerAvatars-message">Choisissez votre avatar</p>
+          <div className="trainerAvatar-container">
+            {trainerImageIdArray.map((id) => {
+              return (
+                <TrainerAvatarFigure
+                  id={id}
+                  key={id}
+                  setIsAddPokemonButtonShown={setIsAddPokemonButtonShown}
+                  trainerImageIdArray={trainerImageIdArray}
+                  setTrainerImageIdArray={setTrainerImageIdArray}
+                  setChosenAvatarId={setChosenAvatarId}
+                />
+              );
+            })}
+          </div>
+        </>
+      )}
+      {arePokemonShown && isAddPokemonButtonShown && (
         <>
           <p className="createTeam-message">Choisissez jusqu'à 6 Pokémon</p>
           {maximumPokemonMessage && (
@@ -71,24 +106,6 @@ export default function CreateTeamPage({ pokemons }: CreateTeamPageProps) {
                 onClick={(event) => {
                   const target = event?.currentTarget;
                   {
-                    // chosenPokemonArray.length >= 6
-                    //   ? target.classList.contains('chosen')
-                    //     ? (target.classList.remove('chosen'),
-                    //       setChosenPokemonArray(
-                    //         chosenPokemonArray.filter((id) => id !== pokemon.id)
-                    //       ),
-                    //       setMaximumPokemonMessage(false))
-                    //     : setMaximumPokemonMessage(true)
-                    //   : target.classList.contains('chosen')
-                    //     ? (target.classList.remove('chosen'),
-                    //       setChosenPokemonArray(
-                    //         chosenPokemonArray.filter((id) => id !== pokemon.id)
-                    //       ))
-                    //     : (target.classList.add('chosen'),
-                    //       setChosenPokemonArray([
-                    //         ...chosenPokemonArray,
-                    //         pokemon.id,
-                    //       ]));
                     if (chosenPokemonArray.length >= 6) {
                       if (target.classList.contains('chosen')) {
                         target.classList.remove('chosen');
