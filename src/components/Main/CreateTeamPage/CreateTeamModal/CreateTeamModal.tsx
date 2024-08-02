@@ -13,6 +13,7 @@ interface CreateTeamModalProps {
   setAreTrainerAvatarsShown: React.Dispatch<React.SetStateAction<boolean>>;
   isAddPokemonButtonShown: boolean;
   chosenAvatarId: number | undefined;
+  arePokemonChosen: boolean;
 }
 export default function CreateTeamModal({
   chosenPokemon,
@@ -20,13 +21,13 @@ export default function CreateTeamModal({
   isAddPokemonButtonShown,
   setAreTrainerAvatarsShown,
   chosenAvatarId,
+  arePokemonChosen,
 }: CreateTeamModalProps) {
   const [avatarSource, setAvatarSource] = useState<string>('');
   useEffect(() => {
     const trainerAvatarSource = `${imageSource.slice(0, 33)}${chosenAvatarId}).jpg`;
     setAvatarSource(trainerAvatarSource);
   }, [avatarSource, chosenAvatarId]);
-  console.log(avatarSource);
 
   return (
     <div className="createTeam-container">
@@ -65,12 +66,14 @@ export default function CreateTeamModal({
                 <p className="avatarChoisi-paragraph">Avatar choisi</p>
                 <div className="avatarChoisi">
                   <figure className="article-image">
-                    <img
-                      src={avatarSource}
-                      alt="trainer"
-                      slot="trainer_image"
-                      className="trainer-image"
-                    />
+                    {!avatarSource.includes('undefined') && (
+                      <img
+                        src={avatarSource}
+                        alt="trainer"
+                        slot="trainer_image"
+                        className="trainer-image"
+                      />
+                    )}
                   </figure>
                 </div>
               </div>
@@ -98,7 +101,7 @@ export default function CreateTeamModal({
                   setArePokemonShown(true);
                 }}
               >
-                Ajouter Pokemon
+                {arePokemonChosen ? "Ajouter l'equipe" : 'Ajouter Pokemon'}
               </Link>
             ) : (
               <Link

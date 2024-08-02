@@ -34,6 +34,7 @@ export default function CreateTeamPage({ pokemons }: CreateTeamPageProps) {
   const [chosenAvatarId, setChosenAvatarId] = useState<number | undefined>(
     undefined
   );
+  const [arePokemonChosen, setArePokemonChosen] = useState<boolean>(false);
 
   useEffect(() => {
     if (chosenPokemon.length > 0) {
@@ -54,12 +55,13 @@ export default function CreateTeamPage({ pokemons }: CreateTeamPageProps) {
   useEffect(() => {
     const pokemonArticles = document.querySelectorAll('.pokemon-article-image');
     if (chosenPokemonArray.length >= 6) {
+      setArePokemonChosen(true);
       pokemonArticles.forEach((article) => article.classList.add('maximum'));
     } else {
       pokemonArticles.forEach((article) => article.classList.remove('maximum'));
+      setArePokemonChosen(false);
     }
   }, [chosenPokemon]);
-
   return (
     <div className="createTeam-main">
       <CreateTeamModal
@@ -68,6 +70,7 @@ export default function CreateTeamPage({ pokemons }: CreateTeamPageProps) {
         setAreTrainerAvatarsShown={setAreTrainerAvatarsShown}
         isAddPokemonButtonShown={isAddPokemonButtonShown}
         chosenAvatarId={chosenAvatarId}
+        arePokemonChosen={arePokemonChosen}
       />
 
       {areTrainerAvatarsShown && !isAddPokemonButtonShown && (
