@@ -7,13 +7,23 @@ import './TeamPage.scss';
 
 interface TeamPageProps {
   teams: ITeam[];
+  createdTeamAvatarSourceArray: string[];
 }
 
-export default function TeamPage({ teams }: TeamPageProps) {
+export default function TeamPage({
+  teams,
+  createdTeamAvatarSourceArray,
+}: TeamPageProps) {
   return (
     <div className="teams-container">
       {teams.map((team) => {
-        return <TeamArticle team={team} key={team.id} />;
+        return (
+          <TeamArticle
+            team={team}
+            key={team.id}
+            createdTeamAvatarSourceArray={createdTeamAvatarSourceArray}
+          />
+        );
       })}
     </div>
   );

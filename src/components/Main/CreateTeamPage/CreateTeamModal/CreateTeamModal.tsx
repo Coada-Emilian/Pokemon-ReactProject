@@ -1,11 +1,14 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import './CreateTeamModal.scss';
 import { IPokemon } from '../../../../@types/types';
 import TeamPokemonArticle from '../../Templates/TeamPokemonArticle';
 import imageSource from '../../../../assets/img/trainers/trainer(1).jpg';
+import createTeam from '../../../Api/Teams/createTeam';
+import TrainerAvatarFigure from '../TrainerAvatarFigure';
 
 interface CreateTeamModalProps {
   setArePokemonShown: React.Dispatch<React.SetStateAction<boolean>>;
@@ -14,7 +17,13 @@ interface CreateTeamModalProps {
   isAddPokemonButtonShown: boolean;
   chosenAvatarId: number | undefined;
   arePokemonChosen: boolean;
+  setIsTeamCreated: React.Dispatch<React.SetStateAction<boolean>>;
+  setCreatedTeamAvatarSourceArray: React.Dispatch<
+    React.SetStateAction<string[]>
+  >;
+  createdTeamAvatarSourceArray: string[];
 }
+
 export default function CreateTeamModal({
   chosenPokemon,
   setArePokemonShown,
@@ -22,18 +31,44 @@ export default function CreateTeamModal({
   setAreTrainerAvatarsShown,
   chosenAvatarId,
   arePokemonChosen,
+  setIsTeamCreated,
+  setCreatedTeamAvatarSourceArray,
+  createdTeamAvatarSourceArray,
 }: CreateTeamModalProps) {
   const [avatarSource, setAvatarSource] = useState<string>('');
+  const [redirect, setRedirect] = useState<boolean>(false);
+
   useEffect(() => {
     const trainerAvatarSource = `${imageSource.slice(0, 33)}${chosenAvatarId}).jpg`;
     setAvatarSource(trainerAvatarSource);
-  }, [avatarSource, chosenAvatarId]);
 
+    if (!createdTeamAvatarSourceArray.includes(trainerAvatarSource)) {
+      const newAvatarSourceArray = [
+        ...createdTeamAvatarSourceArray,
+        trainerAvatarSource,
+      ];
+      setCreatedTeamAvatarSourceArray(newAvatarSourceArray);
+    }
+  }, [chosenAvatarId]);
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get('name') as string;
+    const description = formData.get('description') as string;
+    await createTeam({ name, description });
+    setIsTeamCreated(true);
+    setRedirect(true);
+  };
+
+  if (redirect) {
+    return <Navigate to="/teams" replace />;
+  }
   return (
     <div className="createTeam-container">
       <div className="createTeam-content">
-        <form className="createTeam-form">
-          <div className="modal-card-head ">
+        <form className="createTeam-form" onSubmit={handleSubmit}>
+          <div className="modal-card-head">
             <p className="modal-card-title">Créer une équipe</p>
           </div>
 
@@ -62,9 +97,9 @@ export default function CreateTeamModal({
               required
             />
             {avatarSource && (
-              <div className="avatarChoisi-container">
-                <p className="avatarChoisi-paragraph">Avatar choisi</p>
-                <div className="avatarChoisi">
+              <div className="chosenAvatar-container">
+                <p className="chosenAvatar-paragraph">Avatar choisi</p>
+                <div className="chosenAvatar">
                   <figure className="article-image">
                     {!avatarSource.includes('undefined') && (
                       <img
@@ -93,6 +128,11 @@ export default function CreateTeamModal({
           </div>
 
           <div className="modal-card-foot">
+            {arePokemonChosen && (
+              <button className="button is-info" type="submit">
+                Ajouter l'equipe
+              </button>
+            )}
             {isAddPokemonButtonShown ? (
               <Link
                 to="#"
@@ -101,7 +141,7 @@ export default function CreateTeamModal({
                   setArePokemonShown(true);
                 }}
               >
-                {arePokemonChosen ? "Ajouter l'equipe" : 'Ajouter Pokemon'}
+                Ajouter Pokemon
               </Link>
             ) : (
               <Link

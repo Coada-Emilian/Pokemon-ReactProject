@@ -90,6 +90,10 @@ function App() {
   const [teamSearchValue, setTeamSearchValue] = useState<string>('');
   const [foundTeamArray, setFoundTeamArray] = useState<ITeam[]>([]);
 
+  const [isTeamCreated, setIsTeamCreated] = useState<boolean>(false);
+  const [createdTeamAvatarSourceArray, setCreatedTeamAvatarSourceArray] =
+    useState<string[]>([]);
+
   useEffect(() => {
     try {
       const fetchPokemonData = async () => {
@@ -125,7 +129,7 @@ function App() {
       console.error(error);
       return undefined;
     }
-  }, []);
+  }, [isTeamCreated, createdTeamAvatarSourceArray]);
 
   const pokemons: IPokemon[] = [...pokemonData];
 
@@ -152,6 +156,9 @@ function App() {
       return undefined;
     }
   }, [pokemonSearchValue, teamSearchValue]);
+
+  console.log(createdTeamAvatarSourceArray);
+
   return (
     <>
       <Header
@@ -177,15 +184,28 @@ function App() {
           path="/teams"
           element={
             foundTeamArray.length > 0 ? (
-              <TeamPage teams={foundTeamArray} />
+              <TeamPage
+                teams={foundTeamArray}
+                createdTeamAvatarSourceArray={createdTeamAvatarSourceArray}
+              />
             ) : (
-              <TeamPage teams={teams} />
+              <TeamPage
+                teams={teams}
+                createdTeamAvatarSourceArray={createdTeamAvatarSourceArray}
+              />
             )
           }
         />
         <Route
           path="/create/team"
-          element={<CreateTeamPage pokemons={pokemons} />}
+          element={
+            <CreateTeamPage
+              pokemons={pokemons}
+              setIsTeamCreated={setIsTeamCreated}
+              createdTeamAvatarSourceArray={createdTeamAvatarSourceArray}
+              setCreatedTeamAvatarSourceArray={setCreatedTeamAvatarSourceArray}
+            />
+          }
         />
         <Route
           path="/compare/:id"

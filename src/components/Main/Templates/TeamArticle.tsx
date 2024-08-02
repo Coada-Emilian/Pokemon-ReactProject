@@ -5,11 +5,14 @@ import TeamPokemonArticle from './TeamPokemonArticle';
 
 interface TeamArticleProps {
   team: ITeam;
+  createdTeamAvatarSourceArray: string[];
 }
 
-export default function TeamArticle({ team }: TeamArticleProps) {
+export default function TeamArticle({
+  team,
+  createdTeamAvatarSourceArray,
+}: TeamArticleProps) {
   const imageSource = `${trainerImage.slice(0, 24)}${team.id}.jpg`;
-
   return (
     <article className="team-article" slot="team_article">
       <div className="article-title-container">
@@ -22,12 +25,7 @@ export default function TeamArticle({ team }: TeamArticleProps) {
         <div className="team-trainer-container">
           <div className="card-image">
             <figure className="article-image">
-              <img
-                src={imageSource}
-                alt="trainer"
-                slot="trainer_image"
-                className="trainer-image"
-              />
+              <img src={imageSource} alt="trainer" className="trainer-image" />
             </figure>
           </div>
         </div>

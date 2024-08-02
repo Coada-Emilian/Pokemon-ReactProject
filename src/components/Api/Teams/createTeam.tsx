@@ -1,40 +1,37 @@
-// // eslint-disable-next-line prettier/prettier
-// import axios from 'axios';
-// // eslint-disable-next-line prettier/prettier
-// import apiBaseUrl from '../config';
+/* eslint-disable object-shorthand */
+// eslint-disable-next-line prettier/prettier
+import axios from 'axios';
+import apiBaseUrl from '../config';
 
-// // Fetching all teams
-// export default async function createTeam() {
-//   try {
-//     const response = await axios.post(`${apiBaseUrl}/teams`, {
+interface CreateTeamProps {
+  name: string;
+  description: string;
+}
 
-//     });
+export default async function createTeam({
+  name,
+  description,
+}: CreateTeamProps): Promise<string | null> {
+  try {
+    const response = await axios.post(`${apiBaseUrl}/teams`, {
+      name,
+      description,
+    });
 
-//     axios.post('/user', {
-//         firstName: 'Fred',
-//         lastName: 'Flintstone'
-//       })
-//       .then(function (response) {
-//         console.log(response);
-//       })
-//       .catch(function (error) {
-//         console.log(error);
-//       });
+    if (response.status !== 201) {
+      console.log(response);
+      return null;
+    }
+    const team = response.data;
+    if (!team) {
+      // eslint-disable-next-line prettier/prettier
+      console.log('error');
+      return null;
+    }
 
-//     if (response.status !== 200) {
-//       console.log(response);
-//       return null;
-//     }
-
-//     const teams = response.data;
-//     if (!teams) {
-//       // eslint-disable-next-line prettier/prettier
-//       console.log('error');
-//       return null;
-//     }
-//     return teams;
-//   } catch (error) {
-//     console.error(error);
-//     return null;
-//   }
-// }
+    return team;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}

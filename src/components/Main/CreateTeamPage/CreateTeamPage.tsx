@@ -15,9 +15,19 @@ import TrainerAvatarFigure from './TrainerAvatarFigure';
 
 interface CreateTeamPageProps {
   pokemons: IPokemon[];
+  setIsTeamCreated: React.Dispatch<React.SetStateAction<boolean>>;
+  setCreatedTeamAvatarSourceArray: React.Dispatch<
+    React.SetStateAction<string[]>
+  >;
+  createdTeamAvatarSourceArray: string[];
 }
 
-export default function CreateTeamPage({ pokemons }: CreateTeamPageProps) {
+export default function CreateTeamPage({
+  pokemons,
+  setIsTeamCreated,
+  setCreatedTeamAvatarSourceArray,
+  createdTeamAvatarSourceArray,
+}: CreateTeamPageProps) {
   const [arePokemonShown, setArePokemonShown] = useState(false);
   const [chosenPokemonArray, setChosenPokemonArray] = useState<number[]>([]);
   const [chosenPokemon, setChosenPokemon] = useState<IPokemon[]>([]);
@@ -64,6 +74,7 @@ export default function CreateTeamPage({ pokemons }: CreateTeamPageProps) {
   }, [chosenPokemon]);
   return (
     <div className="createTeam-main">
+      {/* //Show modal */}
       <CreateTeamModal
         setArePokemonShown={setArePokemonShown}
         chosenPokemon={chosenPokemon}
@@ -71,8 +82,11 @@ export default function CreateTeamPage({ pokemons }: CreateTeamPageProps) {
         isAddPokemonButtonShown={isAddPokemonButtonShown}
         chosenAvatarId={chosenAvatarId}
         arePokemonChosen={arePokemonChosen}
+        setIsTeamCreated={setIsTeamCreated}
+        setCreatedTeamAvatarSourceArray={setCreatedTeamAvatarSourceArray}
+        createdTeamAvatarSourceArray={createdTeamAvatarSourceArray}
       />
-
+      {/* avatar selection */}
       {areTrainerAvatarsShown && !isAddPokemonButtonShown && (
         <>
           <p className="trainerAvatars-message">Choisissez votre avatar</p>
@@ -92,6 +106,7 @@ export default function CreateTeamPage({ pokemons }: CreateTeamPageProps) {
           </div>
         </>
       )}
+      {/* pokemon selection */}
       {arePokemonShown && isAddPokemonButtonShown && (
         <>
           <p className="createTeam-message">Choisissez jusqu'à 6 Pokémon</p>
