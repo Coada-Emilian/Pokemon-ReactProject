@@ -12,7 +12,6 @@ export default function CreateTeamButton({
     <Link
       to="/create/team"
       className="button is-info"
-      slot="hamburger-create_team_btn"
       onClick={() => {
         setIsCreateButtonShown(false);
       }}

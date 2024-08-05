@@ -12,7 +12,6 @@ export default function TeamButton({
     <NavLink
       to="/teams"
       className="button is-info"
-      slot="hamburger-team_btn"
       onClick={() => {
         setIsCreateButtonShown(true);
       }}

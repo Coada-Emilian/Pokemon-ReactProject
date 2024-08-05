@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 export default function EditTeamButton() {
   return (
-    <Link to="*" className="button is-light" slot="TeamModal_edit_button">
+    <button type="button" className="button is-light">
       Éditer l’équipe
-    </Link>
+    </button>
   );
 }
