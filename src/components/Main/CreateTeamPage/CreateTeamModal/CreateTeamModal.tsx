@@ -1,14 +1,16 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import './CreateTeamModal.scss';
 import { IPokemon } from '../../../../@types/types';
+
 import TeamPokemonArticle from '../../Templates/TeamPokemonArticle';
 import imageSource from '../../../../assets/img/trainers/trainer(1).jpg';
 import createTeam from '../../../Api/Teams/createTeam';
-import TrainerAvatarFigure from '../TrainerAvatarFigure';
+
+import './CreateTeamModal.scss';
 
 interface CreateTeamModalProps {
   setArePokemonShown: React.Dispatch<React.SetStateAction<boolean>>;
@@ -39,19 +41,21 @@ export default function CreateTeamModal({
   const [redirect, setRedirect] = useState<boolean>(false);
 
   useEffect(() => {
-    const trainerAvatarSource = `${imageSource.slice(0, 33)}${chosenAvatarId}).jpg`;
-    setAvatarSource(trainerAvatarSource);
+    if (chosenAvatarId !== undefined) {
+      const trainerAvatarSource = `${imageSource.slice(0, 33)}${chosenAvatarId}).jpg`;
+      setAvatarSource(trainerAvatarSource);
 
-    if (!createdTeamAvatarSourceArray.includes(trainerAvatarSource)) {
-      const newAvatarSourceArray = [
-        ...createdTeamAvatarSourceArray,
-        trainerAvatarSource,
-      ];
-      setCreatedTeamAvatarSourceArray(newAvatarSourceArray);
+      if (!createdTeamAvatarSourceArray.includes(trainerAvatarSource)) {
+        const newAvatarSourceArray = [
+          ...createdTeamAvatarSourceArray,
+          trainerAvatarSource,
+        ];
+        setCreatedTeamAvatarSourceArray(newAvatarSourceArray);
+      }
     }
   }, [chosenAvatarId]);
 
-  const handleSubmit = async (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const name = formData.get('name') as string;

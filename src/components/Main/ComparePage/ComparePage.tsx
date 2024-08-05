@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from 'react';
 
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { IPokemon } from '../../../@types/types';
 
 import TeamPokemonArticle from '../Templates/TeamPokemonArticle';
@@ -53,8 +54,8 @@ export default function ComparePage({ pokemons }: ComparePageProps) {
 
               return (
                 <div className="small-compare-article" key={pokemon.name}>
-                  <button
-                    type="button"
+                  <Link
+                    to="#"
                     onClick={() => {
                       setIsPokemonChosen(true);
                       setComparedPokemonId(chosenPokemonId);
@@ -63,7 +64,7 @@ export default function ComparePage({ pokemons }: ComparePageProps) {
                     aria-label={`Compare with ${pokemon.name}`}
                   >
                     <TeamPokemonArticle pokemon={pokemon} key={pokemon.id} />
-                  </button>
+                  </Link>
                 </div>
               );
             })}

@@ -1,5 +1,5 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Link } from 'react-router-dom';
 import imageSource from '../../../assets/img/trainers/trainer(1).jpg';
 

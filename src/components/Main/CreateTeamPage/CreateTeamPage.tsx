@@ -1,17 +1,17 @@
-/* eslint-disable no-lonely-if */
-/* eslint-disable no-lone-blocks */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable react/react-in-jsx-scope */
-import { useEffect, useState } from 'react';
+/* eslint-disable no-lone-blocks */
+/* eslint-disable no-lonely-if */
+/* eslint-disable jsx-a11y/control-has-associated-label */
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import CreateTeamModal from './CreateTeamModal/CreateTeamModal';
-import './CreateTeamPage.scss';
+
 import { IPokemon } from '../../../@types/types';
 import TeamPokemonArticle from '../Templates/TeamPokemonArticle';
 import TrainerAvatarFigure from './TrainerAvatarFigure';
+import CreateTeamModal from './CreateTeamModal/CreateTeamModal';
+
+import './CreateTeamPage.scss';
 
 interface CreateTeamPageProps {
   pokemons: IPokemon[];
@@ -72,6 +72,7 @@ export default function CreateTeamPage({
       setArePokemonChosen(false);
     }
   }, [chosenPokemon]);
+
   return (
     <div className="createTeam-main">
       {/* //Show modal */}
@@ -109,7 +110,7 @@ export default function CreateTeamPage({
       {/* pokemon selection */}
       {arePokemonShown && isAddPokemonButtonShown && (
         <>
-          <p className="createTeam-message">Choisissez jusqu'à 6 Pokémon</p>
+          <p className="createTeam-message">Choisissez 6 Pokémon</p>
           {maximumPokemonMessage && (
             <p className="maximumPokemon-paragraph">
               Nombre de Pokémon maximum atteint
