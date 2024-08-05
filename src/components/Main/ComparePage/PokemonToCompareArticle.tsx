@@ -1,3 +1,4 @@
+import React from 'react';
 import { IPokemon } from '../../../@types/types';
 
 interface PokemonToCompareArticleProps {
