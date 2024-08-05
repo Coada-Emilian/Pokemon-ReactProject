@@ -1,5 +1,5 @@
 // eslint-disable-next-line prettier/prettier
-import axios from "axios";
+import axios from 'axios';
 
 // Fetching all pokemon from Api
 export default async function getAllPokemonApi() {
@@ -17,7 +17,7 @@ export default async function getAllPokemonApi() {
 
     if (!pokemon) {
       // eslint-disable-next-line prettier/prettier
-      console.log("error");
+      console.log('error');
       return null;
     }
     return pokemon;
