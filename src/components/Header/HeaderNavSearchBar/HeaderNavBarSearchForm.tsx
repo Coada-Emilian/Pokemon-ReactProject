@@ -1,5 +1,3 @@
-/* eslint-disable no-lone-blocks */
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React from 'react';
 
 interface HeaderNavBarSearchFormProps {
@@ -13,6 +11,14 @@ export default function HeaderNavBarSearchForm({
   setPokemonSearchValue,
   setTeamSearchValue,
 }: HeaderNavBarSearchFormProps) {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.currentTarget.value.toLowerCase();
+    if (isCreateButtonShown) {
+      setTeamSearchValue(value);
+    } else {
+      setPokemonSearchValue(value);
+    }
+  };
   return (
     <form action="#" className="search-form" slot="search-form">
       <input
@@ -20,14 +26,10 @@ export default function HeaderNavBarSearchForm({
         name="term"
         type="text"
         placeholder={isCreateButtonShown ? 'Find a team' : 'Find a pokemon'}
-        onChange={(event) => {
-          const value = event.currentTarget.value.toLowerCase();
-          {
-            isCreateButtonShown
-              ? setTeamSearchValue(value)
-              : setPokemonSearchValue(value);
-          }
-        }}
+        onChange={handleInputChange}
+        aria-label={
+          isCreateButtonShown ? 'Search for a team' : 'Search for a Pokémon'
+        }
       />
     </form>
   );

@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import icon from '../../../assets/icons/pokedex.png';
@@ -14,15 +13,13 @@ export default function HeaderNavBarBrandIcon({
     <Link
       className="navbar-item"
       to="/"
-      slot="navBar_pokedex_anchor"
-      id="navbar-pokedex"
       onClick={() => {
         setIsCreateButtonShown(false);
       }}
     >
       <img src={icon} alt="pokedex icon" className="pokedex-icon" />
 
-      <h1 className="title icon-title">O'Pokedex</h1>
+      <h1 className="title icon-title">O&#39;Pokedex</h1>
     </Link>
   );
 }
