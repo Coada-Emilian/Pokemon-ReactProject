@@ -157,8 +157,6 @@ function App() {
     }
   }, [pokemonSearchValue, teamSearchValue]);
 
-  console.log(createdTeamAvatarSourceArray);
-
   return (
     <>
       <Header
