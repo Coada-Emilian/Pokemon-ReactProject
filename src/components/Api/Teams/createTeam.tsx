@@ -1,7 +1,6 @@
-/* eslint-disable object-shorthand */
-// eslint-disable-next-line prettier/prettier
 import axios from 'axios';
 import apiBaseUrl from '../config';
+import { ITeam } from '../../../@types/types';
 
 interface CreateTeamProps {
   name: string;
@@ -11,27 +10,30 @@ interface CreateTeamProps {
 export default async function createTeam({
   name,
   description,
-}: CreateTeamProps): Promise<string | null> {
+}: CreateTeamProps): Promise<ITeam | null> {
   try {
-    const response = await axios.post(`${apiBaseUrl}/teams`, {
+    const response = await axios.post<ITeam>(`${apiBaseUrl}/teams`, {
       name,
       description,
     });
 
     if (response.status !== 201) {
-      console.log(response);
+      console.error(`Unexpected response status: ${response.status}`);
       return null;
     }
     const team = response.data;
     if (!team) {
-      // eslint-disable-next-line prettier/prettier
-      console.log('error');
+      console.error('No data received after team creation');
       return null;
     }
 
     return team;
   } catch (error) {
-    console.error(error);
+    if (axios.isAxiosError(error)) {
+      console.error('Axios error occurred while creating team:', error.message);
+    } else {
+      console.error('Unexpected error occurred while creating team:', error);
+    }
     return null;
   }
 }

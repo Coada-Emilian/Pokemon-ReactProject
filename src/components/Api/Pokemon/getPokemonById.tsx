@@ -7,7 +7,7 @@ export default async function getPokemonById(
   id: number
 ): Promise<IPokemon | null> {
   try {
-    const response = await axios.get(`${apiBaseUrl}/pokemon/${id}`);
+    const response = await axios.get<IPokemon>(`${apiBaseUrl}/pokemon/${id}`);
 
     if (response.status !== 201) {
       console.error(`Unexpected response status: ${response.status}`);
