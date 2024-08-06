@@ -22,6 +22,7 @@ import ComparePage from './Main/ComparePage/ComparePage';
 import getAllTeams from './Api/Teams/getAllTeams';
 
 import CreateTeamPage from './Main/CreateTeamPage/CreateTeamPage';
+import Error404Page from './Main/ErrorPage/Error404Page';
 
 function App() {
   const [pokemonData, setPokemonData] = useState<IPokemon[]>([]);
@@ -153,7 +154,7 @@ function App() {
           path="/compare/:id"
           element={<ComparePage pokemons={pokemons} />}
         />
-        <Route path="*" element={<h1>Y U Here?</h1>} />
+        <Route path="*" element={<Error404Page />} />
       </Routes>
     </>
   );
