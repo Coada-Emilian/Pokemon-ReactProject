@@ -84,7 +84,7 @@ export default function PokemonModal({
             >
               Comparer
             </Link>
-            <button
+            {/* <button
               type="button"
               className="button is-info pokemonModal-addButton"
               slot="pokemonModal_addButton"
@@ -97,7 +97,7 @@ export default function PokemonModal({
               slot="pokemonModal_removeButton"
             >
               Retirer de l'équipe
-            </button>
+            </button> */}
           </footer>
         </div>
       </div>

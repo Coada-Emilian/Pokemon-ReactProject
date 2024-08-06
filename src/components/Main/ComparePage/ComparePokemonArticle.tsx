@@ -63,7 +63,7 @@ export default function ComparePokemonArticle({
         </div>
 
         <footer className="pokemonToCompare-footer">
-          <button
+          {/* <button
             type="button"
             className="button is-info pokemonToCompare-addButton"
           >
@@ -74,7 +74,7 @@ export default function ComparePokemonArticle({
             className="button is-danger pokemonToCompare-removeButton"
           >
             Retirer de l&#39;équipe
-          </button>
+          </button> */}
         </footer>
       </div>
     </div>
