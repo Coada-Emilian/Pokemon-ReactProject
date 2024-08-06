@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import HeaderNavBarBrand from './HeaderNavBarBrand/HeaderNavBarBrand';
 import HeaderNavBarMenu from './HeaderNavBarMenu/HeaderNavBarMenu';
@@ -7,13 +7,16 @@ import HeaderNavSearchBar from './HeaderNavSearchBar/HeaderNavSearchBar';
 interface HeaderNavBarProps {
   setPokemonSearchValue: React.Dispatch<React.SetStateAction<string>>;
   setTeamSearchValue: React.Dispatch<React.SetStateAction<string>>;
+  setIsCreateButtonShown: React.Dispatch<React.SetStateAction<boolean>>;
+  isCreateButtonShown: boolean;
 }
 
 export default function HeaderNavBar({
   setPokemonSearchValue,
   setTeamSearchValue,
+  setIsCreateButtonShown,
+  isCreateButtonShown,
 }: HeaderNavBarProps) {
-  const [isCreateButtonShown, setIsCreateButtonShown] = useState(false);
   return (
     <nav
       className="navbar"

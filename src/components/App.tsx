@@ -94,6 +94,8 @@ function App() {
   const [createdTeamAvatarSourceArray, setCreatedTeamAvatarSourceArray] =
     useState<string[]>([]);
 
+  const [isCreateButtonShown, setIsCreateButtonShown] = useState(false);
+
   useEffect(() => {
     try {
       const fetchPokemonData = async () => {
@@ -163,6 +165,8 @@ function App() {
       <Header
         setPokemonSearchValue={setPokemonSearchValue}
         setTeamSearchValue={setTeamSearchValue}
+        isCreateButtonShown={isCreateButtonShown}
+        setIsCreateButtonShown={setIsCreateButtonShown}
       />
       <Routes>
         <Route
@@ -197,6 +201,7 @@ function App() {
               setIsTeamCreated={setIsTeamCreated}
               createdTeamAvatarSourceArray={createdTeamAvatarSourceArray}
               setCreatedTeamAvatarSourceArray={setCreatedTeamAvatarSourceArray}
+              setIsCreateButtonShown={setIsCreateButtonShown}
             />
           }
         />

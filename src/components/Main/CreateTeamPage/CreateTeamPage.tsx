@@ -20,6 +20,7 @@ interface CreateTeamPageProps {
     React.SetStateAction<string[]>
   >;
   createdTeamAvatarSourceArray: string[];
+  setIsCreateButtonShown: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function CreateTeamPage({
@@ -27,6 +28,7 @@ export default function CreateTeamPage({
   setIsTeamCreated,
   setCreatedTeamAvatarSourceArray,
   createdTeamAvatarSourceArray,
+  setIsCreateButtonShown,
 }: CreateTeamPageProps) {
   // Are Pokemon Shown
   const [arePokemonShown, setArePokemonShown] = useState(false);
@@ -95,6 +97,7 @@ export default function CreateTeamPage({
         setIsTeamCreated={setIsTeamCreated}
         setCreatedTeamAvatarSourceArray={setCreatedTeamAvatarSourceArray}
         createdTeamAvatarSourceArray={createdTeamAvatarSourceArray}
+        setIsCreateButtonShown={setIsCreateButtonShown}
       />
       {/* avatar selection */}
       {areTrainerAvatarsShown && !isAddPokemonButtonShown && (

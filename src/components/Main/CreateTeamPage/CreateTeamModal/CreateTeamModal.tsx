@@ -25,6 +25,7 @@ interface CreateTeamModalProps {
     React.SetStateAction<string[]>
   >;
   createdTeamAvatarSourceArray: string[];
+  setIsCreateButtonShown: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function CreateTeamModal({
@@ -37,6 +38,7 @@ export default function CreateTeamModal({
   setIsTeamCreated,
   setCreatedTeamAvatarSourceArray,
   createdTeamAvatarSourceArray,
+  setIsCreateButtonShown,
 }: CreateTeamModalProps) {
   const [avatarSource, setAvatarSource] = useState<string>('');
   const [redirect, setRedirect] = useState<boolean>(false);
@@ -69,6 +71,7 @@ export default function CreateTeamModal({
     await createTeam({ name, description, avatarSourceId, pokemonArray });
     setIsTeamCreated(true);
     setRedirect(true);
+    setIsCreateButtonShown(true);
   };
 
   if (redirect) {
