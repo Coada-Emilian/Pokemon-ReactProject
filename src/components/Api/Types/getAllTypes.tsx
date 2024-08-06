@@ -12,7 +12,7 @@ export default async function getAllTypes(): Promise<IType[] | null> {
       return null;
     }
 
-    const foundTypes = response.data;
+    const foundTypes: IType[] = response.data;
 
     if (!foundTypes || foundTypes.length === 0) {
       console.error('No types data received from the API');
