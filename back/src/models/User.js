@@ -5,11 +5,11 @@ export class User extends Model {}
 
 User.init(
   {
-    firstname: {
+    firstName: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    lastname: {
+    lastName: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
@@ -24,6 +24,6 @@ User.init(
   },
   {
     sequelize,
-    tableName: 'user',
+    tableName: 'users',
   }
 );

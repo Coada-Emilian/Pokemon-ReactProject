@@ -9,6 +9,14 @@ import {
   sequelize,
 } from '../models/index.js';
 
+console.log("Ajout d'un demo user");
+await User.create({
+  firstName: 'Emilian',
+  lastName: 'Coada',
+  email: 'emilian.coada@gmail.com',
+  password: '1234',
+});
+
 console.log('Ajout des types...');
 await Type.bulkCreate([
   { name: 'Acier', color: 'aaaabb' },

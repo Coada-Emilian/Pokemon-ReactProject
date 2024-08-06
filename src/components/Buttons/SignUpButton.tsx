@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function SignUpButton() {
   return (
-    <button type="button" className="button is-dark">
+    <Link to="/signUp" type="button" className="button is-dark">
       <strong>Enregistrement</strong>
-    </button>
+    </Link>
   );
 }
