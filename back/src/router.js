@@ -27,6 +27,7 @@ router.get('/types', cw(typesController.getAllTypes));
 router.get('/teams', cw(teamsController.getAllTeams));
 router.post('/teams', cw(teamsController.createTeam));
 router.patch('/teams/:id', cw(teamsController.editTeamName));
+// router.patch('/teams/avatarSource', cw(teamsController.updateAvatarSource()));
 router.delete('/teams/:id', cw(teamsController.deleteTeamById));
 router.get('/teams/:id', cw(teamsController.getTeamById));
 

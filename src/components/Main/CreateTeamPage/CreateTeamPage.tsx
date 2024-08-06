@@ -28,22 +28,31 @@ export default function CreateTeamPage({
   setCreatedTeamAvatarSourceArray,
   createdTeamAvatarSourceArray,
 }: CreateTeamPageProps) {
+  // Are Pokemon Shown
   const [arePokemonShown, setArePokemonShown] = useState(false);
+  // Chosen Pokemon Id's Array
   const [chosenPokemonArray, setChosenPokemonArray] = useState<number[]>([]);
+  // Chosen Pokemon objects
   const [chosenPokemon, setChosenPokemon] = useState<IPokemon[]>([]);
+  // Maximum message
   const [maximumPokemonMessage, setMaximumPokemonMessage] =
     useState<boolean>(false);
+  // Trainer Id Array
   const [trainerImageIdArray, setTrainerImageIdArray] = useState<number[]>([
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
     22, 23, 24, 25,
   ]);
+  // Are the avatars shown
   const [areTrainerAvatarsShown, setAreTrainerAvatarsShown] =
     useState<boolean>(false);
+  // Add Pokemon button shown?
   const [isAddPokemonButtonShown, setIsAddPokemonButtonShown] =
     useState<boolean>(false);
+  // chosen avatar id
   const [chosenAvatarId, setChosenAvatarId] = useState<number | undefined>(
     undefined
   );
+  //are pookemon chosen
   const [arePokemonChosen, setArePokemonChosen] = useState<boolean>(false);
 
   useEffect(() => {

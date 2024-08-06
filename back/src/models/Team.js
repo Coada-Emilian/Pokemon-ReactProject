@@ -12,6 +12,12 @@ Team.init(
     description: {
       type: DataTypes.TEXT,
     },
+    avatarSourceId: {
+      type: DataTypes.INTEGER,
+    },
+    pokemonArray: {
+      type: DataTypes.ARRAY(DataTypes.INTEGER),
+    },
   },
   {
     sequelize,

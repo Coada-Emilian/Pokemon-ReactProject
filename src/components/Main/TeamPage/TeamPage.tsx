@@ -1,7 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable consistent-return */
 import { ITeam } from '../../../@types/types';
-import TeamArticle from '../Templates/TeamArticle';
+import TeamArticle from './TeamArticle';
 
 import './TeamPage.scss';
 
@@ -14,6 +14,7 @@ export default function TeamPage({
   teams,
   createdTeamAvatarSourceArray,
 }: TeamPageProps) {
+  console.log(teams);
   return (
     <div className="teams-container">
       {teams.map((team) => {

@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/label-has-associated-control */
+
 import React, { useEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { IPokemon } from '../../../../@types/types';
@@ -11,6 +12,7 @@ import imageSource from '../../../../assets/img/trainers/trainer(1).jpg';
 import createTeam from '../../../Api/Teams/createTeam';
 
 import './CreateTeamModal.scss';
+import updateTeamById from '../../../Api/Teams/updateTeam';
 
 interface CreateTeamModalProps {
   setArePokemonShown: React.Dispatch<React.SetStateAction<boolean>>;
@@ -60,7 +62,8 @@ export default function CreateTeamModal({
     const formData = new FormData(event.currentTarget);
     const name = formData.get('name') as string;
     const description = formData.get('description') as string;
-    await createTeam({ name, description });
+    const avatarSourceId = chosenAvatarId;
+    await createTeam({ name, description, avatarSourceId });
     setIsTeamCreated(true);
     setRedirect(true);
   };

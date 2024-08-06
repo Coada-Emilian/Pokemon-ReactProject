@@ -1,7 +1,8 @@
 import React from 'react';
 import { ITeam } from '../../../@types/types';
 import trainerImage from '../../../assets/img/trainer-1.jpg';
-import TeamPokemonArticle from './TeamPokemonArticle';
+import TeamPokemonArticle from '../Templates/TeamPokemonArticle';
+// import trainerAvatarSource from '../../../assets/img/trainers/trainer(1).jpg';
 
 interface TeamArticleProps {
   team: ITeam;
