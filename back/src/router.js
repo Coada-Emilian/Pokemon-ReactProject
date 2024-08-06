@@ -5,6 +5,7 @@ import * as mainController from './controllers/mainController.js';
 import * as pokemonController from './controllers/pokemonController.js';
 import * as typesController from './controllers/typesController.js';
 import * as teamsController from './controllers/teamsController.js';
+import * as userController from './controllers/userController.js';
 
 export const router = Router();
 
@@ -27,9 +28,10 @@ router.get('/types', cw(typesController.getAllTypes));
 router.get('/teams', cw(teamsController.getAllTeams));
 router.post('/teams', cw(teamsController.createTeam));
 router.patch('/teams/:id', cw(teamsController.editTeamName));
-// router.patch('/teams/avatarSource', cw(teamsController.updateAvatarSource()));
 router.delete('/teams/:id', cw(teamsController.deleteTeamById));
 router.get('/teams/:id', cw(teamsController.getTeamById));
+
+router.post('/signIn', cw(userController.signInUser));
 
 router.use((req, res) => {
   res.status(404).json({ error: 'Not Found' });

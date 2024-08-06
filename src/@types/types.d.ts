@@ -51,3 +51,12 @@ export interface IPokemonHasType {
   pokemon_id: number;
   type_id: number;
 }
+
+export interface IUser {
+  createdAt?: Date;
+  updatedAt?: Date;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+}
