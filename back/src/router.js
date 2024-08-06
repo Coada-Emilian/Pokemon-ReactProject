@@ -31,7 +31,9 @@ router.patch('/teams/:id', cw(teamsController.editTeamName));
 router.delete('/teams/:id', cw(teamsController.deleteTeamById));
 router.get('/teams/:id', cw(teamsController.getTeamById));
 
+router.get('/users', cw(userController.getAllUsers));
 router.post('/signIn', cw(userController.signInUser));
+router.post('/signUp', cw(userController.signUpUser));
 
 router.use((req, res) => {
   res.status(404).json({ error: 'Not Found' });
