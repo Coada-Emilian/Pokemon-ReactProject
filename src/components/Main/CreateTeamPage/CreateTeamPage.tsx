@@ -52,7 +52,7 @@ export default function CreateTeamPage({
   const [chosenAvatarId, setChosenAvatarId] = useState<number | undefined>(
     undefined
   );
-  //are pookemon chosen
+  // are pokemon chosen
   const [arePokemonChosen, setArePokemonChosen] = useState<boolean>(false);
 
   useEffect(() => {

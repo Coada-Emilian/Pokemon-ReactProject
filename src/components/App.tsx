@@ -125,11 +125,12 @@ function App() {
         }
       };
       fetchTeamData();
+      setIsTeamCreated(false);
     } catch (error) {
       console.error(error);
       return undefined;
     }
-  }, [isTeamCreated, createdTeamAvatarSourceArray]);
+  }, [isTeamCreated]);
 
   const pokemons: IPokemon[] = [...pokemonData];
 
@@ -182,15 +183,9 @@ function App() {
           path="/teams"
           element={
             foundTeamArray.length > 0 ? (
-              <TeamPage
-                teams={foundTeamArray}
-                createdTeamAvatarSourceArray={createdTeamAvatarSourceArray}
-              />
+              <TeamPage teams={foundTeamArray} />
             ) : (
-              <TeamPage
-                teams={teams}
-                createdTeamAvatarSourceArray={createdTeamAvatarSourceArray}
-              />
+              <TeamPage teams={teams} />
             )
           }
         />

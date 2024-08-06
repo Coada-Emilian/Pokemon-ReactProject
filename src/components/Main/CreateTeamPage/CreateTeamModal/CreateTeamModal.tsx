@@ -12,7 +12,6 @@ import imageSource from '../../../../assets/img/trainers/trainer(1).jpg';
 import createTeam from '../../../Api/Teams/createTeam';
 
 import './CreateTeamModal.scss';
-import updateTeamById from '../../../Api/Teams/updateTeam';
 
 interface CreateTeamModalProps {
   setArePokemonShown: React.Dispatch<React.SetStateAction<boolean>>;
@@ -62,8 +61,12 @@ export default function CreateTeamModal({
     const formData = new FormData(event.currentTarget);
     const name = formData.get('name') as string;
     const description = formData.get('description') as string;
-    const avatarSourceId = chosenAvatarId;
-    await createTeam({ name, description, avatarSourceId });
+    const avatarSourceId: number | undefined = chosenAvatarId;
+    const pokemonArray: number[] = [];
+    chosenPokemon.forEach((pokemon) => {
+      pokemonArray.push(pokemon.id);
+    });
+    await createTeam({ name, description, avatarSourceId, pokemonArray });
     setIsTeamCreated(true);
     setRedirect(true);
   };
@@ -71,6 +74,7 @@ export default function CreateTeamModal({
   if (redirect) {
     return <Navigate to="/teams" replace />;
   }
+
   return (
     <div className="createTeam-container">
       <div className="createTeam-content">

@@ -5,19 +5,22 @@ import { ITeam } from '../../../@types/types';
 interface CreateTeamProps {
   name: string;
   description: string;
-  avatarSourceId: number;
+  avatarSourceId: number | undefined;
+  pokemonArray: number[] | undefined;
 }
 
 export default async function createTeam({
   name,
   description,
   avatarSourceId,
+  pokemonArray,
 }: CreateTeamProps): Promise<ITeam | null> {
   try {
     const response = await axios.post<ITeam>(`${apiBaseUrl}/teams`, {
       name,
       description,
       avatarSourceId,
+      pokemonArray,
     });
 
     if (response.status !== 201) {
