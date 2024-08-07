@@ -1,6 +1,6 @@
-@use "sass:color";
+@use 'sass:color';
 
-@use "./variables" as v;
+@use './variables' as v;
 
 /* Typography */
 @mixin bold {
@@ -20,7 +20,13 @@
 
 @mixin flexRowSpaceBetween {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+@mixin flexRowSpaceAround {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }
 

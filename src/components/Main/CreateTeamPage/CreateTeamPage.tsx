@@ -12,8 +12,6 @@ import TrainerAvatarFigure from './TrainerAvatarFigure';
 import CreateTeamModal from './CreateTeamModal/CreateTeamModal';
 
 import './CreateTeamPage.scss';
-import PokemonModal from '../Modals/PokemonModal/PokemonModal';
-import SmallPokemonModal from '../Modals/PokemonModal/SmallPokemonModal';
 
 interface CreateTeamPageProps {
   pokemons: IPokemon[];

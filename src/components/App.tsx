@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable consistent-return */
 /* eslint-disable no-param-reassign */
+
 import React, { useEffect, useState } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
@@ -11,11 +12,7 @@ import Main from './Main/Main';
 
 import getAllTypes from './Api/Types/getAllTypes';
 
-// import getAllPokemonApi from "./Api/getAllPokemonApi";
-// import { IPokemonAPI } from "../@types/pokemonApi";
-// import getApiPokemonDetails from "./Api/getApiPokemonDetails";
-
-import { IPokemon, ITeam, IType } from '../@types/types';
+import { IPokemon, ITeam, IType, IUser } from '../@types/types';
 import MainTypePokemon from './Main/TypePokemonPage/MainTypePokemon';
 import TeamPage from './Main/TeamPage/TeamPage';
 import ComparePage from './Main/ComparePage/ComparePage';
@@ -42,6 +39,11 @@ function App() {
     useState<string[]>([]);
 
   const [isCreateButtonShown, setIsCreateButtonShown] = useState(false);
+
+  const [isUserConnected, setIsUserConnected] = useState(false);
+  const [connectedUser, setConnectedUser] = useState<IUser | undefined>(
+    undefined
+  );
 
   useEffect(() => {
     try {
@@ -106,6 +108,16 @@ function App() {
       return undefined;
     }
   }, [pokemonSearchValue, teamSearchValue]);
+  useEffect(() => {
+    console.log('TODO: Rework responsive CSS');
+    console.log('TODO: Restructure code');
+    console.log('TODO: Add team modal edit team behavior');
+    console.log('TODO: Add team modal delete team behavior');
+    console.log("TODO: Eliminate avatar if it's chosen when creating team");
+    console.log('TODO: Rework create team css');
+    console.log('TODO: Add a hover effect on pokemon');
+    console.log('TODO: Add authentification and co when connecting');
+  }, []);
 
   return (
     <>
@@ -114,6 +126,10 @@ function App() {
         setTeamSearchValue={setTeamSearchValue}
         isCreateButtonShown={isCreateButtonShown}
         setIsCreateButtonShown={setIsCreateButtonShown}
+        isUserConnected={isUserConnected}
+        connectedUser={connectedUser}
+        setIsUserConnected={setIsUserConnected}
+        setConnectedUser={setConnectedUser}
       />
       <Routes>
         <Route
@@ -156,8 +172,24 @@ function App() {
           path="/compare/:id"
           element={<ComparePage pokemons={pokemons} />}
         />
-        <Route path="/signUp" element={<SignUpPage />} />
-        <Route path="/signIn" element={<SignInPage />} />
+        <Route
+          path="/signUp"
+          element={
+            <SignUpPage
+              setIsUserConnected={setIsUserConnected}
+              setConnectedUser={setConnectedUser}
+            />
+          }
+        />
+        <Route
+          path="/signIn"
+          element={
+            <SignInPage
+              setIsUserConnected={setIsUserConnected}
+              setConnectedUser={setConnectedUser}
+            />
+          }
+        />
         <Route path="*" element={<Error404Page />} />
       </Routes>
     </>

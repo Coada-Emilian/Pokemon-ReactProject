@@ -1,8 +1,20 @@
 import React from 'react';
 
-export default function CancelTeamButton() {
+interface CancelTeamButtonProps {
+  setIsTeamModalOn: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function CancelTeamButton({
+  setIsTeamModalOn,
+}: CancelTeamButtonProps) {
   return (
-    <button type="button" className="button is-dark">
+    <button
+      type="button"
+      className="button is-dark"
+      onClick={() => {
+        setIsTeamModalOn(false);
+      }}
+    >
       Annuler
     </button>
   );

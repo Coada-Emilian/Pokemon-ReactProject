@@ -1,0 +1,50 @@
+@use '../../../../styles/mixins' as m;
+@use '../../../../styles/variables' as v;
+
+.teamModal-image-description {
+  @include m.flexRowSpaceAround;
+}
+.teamModal-pokemon-paragraph,
+#team-modal-title,
+.teamModal-image-description,
+#teamModal-pokemon-figures,
+.teamModal-stats-paragraph,
+.teamStats-paragraph {
+  color: v.$title-font;
+  margin-bottom: 2rem;
+}
+
+#teamModal-pokemon-figures {
+  @include m.flexColumn;
+  gap: 1rem;
+}
+.teamModal-pokemon-article {
+  @include m.flexRowSpaceBetween;
+}
+#teamModal-pokemon-figures .card {
+  background-color: inherit;
+}
+.modal-card .teamModal-content {
+  padding: 1rem;
+}
+.teamModal-content .card-footer {
+  @include m.flexRowSpaceAround;
+  background-color: inherit;
+  border-top: 0;
+}
+.teamModal-pokemon-article {
+  border: 1px solid v.$title-font;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.article-stats,
+.article-image_name {
+  width: 50%;
+}
+.article-image_name {
+  text-align: center;
+}
+.teamPokemon-image {
+  width: 50%;
+  margin: 0 auto;
+}

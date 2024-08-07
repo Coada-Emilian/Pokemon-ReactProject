@@ -1,11 +1,18 @@
 import React from 'react';
+import { IPokemon } from '../../../../@types/types';
+import pokemonImageSource from '../../../../assets/img/1.webp';
 
-export default function TeamPokemon() {
+interface TeamPokemonProps {
+  pokemon: IPokemon;
+}
+
+export default function TeamPokemon({ pokemon }: TeamPokemonProps) {
+  const imageSource = `${pokemonImageSource.slice(0, 16)}${pokemon.id}.webp`;
   return (
-    <div className="card pokemon__small-image" slot="pokemon-id">
+    <div className="card pokemon__small-image">
       <div className="card-image">
-        <figure className="image is-64x64">
-          <img src="" alt="" slot="pokemon-image" />
+        <figure className="teamPokemon-image">
+          <img src={imageSource} alt={pokemon.name} slot="pokemon-image" />
         </figure>
       </div>
     </div>

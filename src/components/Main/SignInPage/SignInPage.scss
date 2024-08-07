@@ -1,38 +1,39 @@
-// body {
-//     font-family: Arial, sans-serif;
-//     background-color: #f4f4f4;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     height: 100vh;
-//   }
-//   .signin-form {
-//     background-color: #fff;
-//     padding: 20px;
-//     border-radius: 8px;
-//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-//     width: 300px;
-//   }
-//   .signin-form h2 {
-//     text-align: center;
-//     margin-bottom: 20px;
-//   }
-//   .signin-form input {
-//     width: 100%;
-//     padding: 10px;
-//     margin: 10px 0;
-//     border: 1px solid #ccc;
-//     border-radius: 4px;
-//   }
-//   .signin-form button {
-//     width: 100%;
-//     padding: 10px;
-//     background-color: #007bff;
-//     color: white;
-//     border: none;
-//     border-radius: 4px;
-//     cursor: pointer;
-//   }
-//   .signin-form button:hover {
-//     background-color: #0056b3;
-//   }
+@use '../../../styles/mixins' as m;
+@use '../../../styles/variables' as v;
+
+.signin-container {
+  height: 50vh;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: v.$title-font;
+  padding: 2rem;
+  @include m.flexColumn;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+.signin-container h2 {
+  margin-bottom: 3rem;
+}
+
+.signin-form {
+  @include m.flexColumn;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.signin-form input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.signin-form button {
+  padding: 0.5rem;
+  width: 30%;
+  margin: 0 auto;
+}
+.error-message {
+  color: red;
+  margin-bottom: 1rem;
+}
